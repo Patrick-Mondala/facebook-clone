@@ -7,7 +7,7 @@
     color: white;
     font-size: 12px;
     border-bottom: 1px solid #133783;
-    min-width: 995px;
+    width: 100%;
 }
 
 #login {

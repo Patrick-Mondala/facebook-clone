@@ -4535,3 +4535,10 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 278ms (Views: 276.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-10-08 15:38:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 150ms (Views: 142.4ms | ActiveRecord: 0.0ms)
+
+
