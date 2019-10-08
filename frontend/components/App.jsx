@@ -8,11 +8,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 //App
 export default () => (
     <div>
-        <header>
-            <h1>facebook</h1>
+        <header id="login-menu-bar">
+            <div id="login">
+                <h1>facebook</h1>
+                <AuthRoute path="/" component={LoginFormContainer} />
+            </div>
         </header>
 
-        <AuthRoute path="/" component={LoginFormContainer} />
         <AuthRoute path="/" component={SignupFormContainer} />
     </div>
 );
