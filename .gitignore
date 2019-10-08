@@ -1,4 +1,5 @@
 /node_modules
+/tmp
 bundle.js
 bundle.js.map
 [Tt]humbs.db

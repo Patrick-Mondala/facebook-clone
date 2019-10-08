@@ -1,0 +1,1 @@
+json.extract! user, :id, :first_name, :last_name, :email, :birth_date, :gender, :bio, :location, :current_city, :hometown, :workplace, :education
