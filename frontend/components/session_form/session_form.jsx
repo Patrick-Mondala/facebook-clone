@@ -32,11 +32,9 @@ class SessionForm extends React.Component {
             switch (field) {
                 case "month":
                     this.setState({ birth_date: this.state.birth_date.slice(0, 5) + e.target.value + this.state.birth_date.slice(7) });
-                    console.log(this.state.birth_date.slice(0, 5) + e.target.value + this.state.birth_date.slice(7));
                     break;
                 case "day":
                     this.setState({ birth_date: this.state.birth_date.slice(0, 8) + e.target.value });
-                    console.log(this.state.birth_date.slice(0, 8) + e.target.value);
                     break;
                 case "year":
                     if (parseInt(e.target.value) > 1900 && parseInt(e.target.value) < 2019) {
@@ -45,7 +43,6 @@ class SessionForm extends React.Component {
                         //in case someone tries to break my switch case, and impossible age
                         this.setState({ birth_date: 2001 + this.state.birth_date.slice(4) })
                     }
-                    console.log(e.target.value + this.state.birth_date.slice(4));
                     break;
                 default:
                     break;
