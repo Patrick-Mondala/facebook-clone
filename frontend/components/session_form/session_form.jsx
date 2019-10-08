@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
             password: '',
             first_name: '',
             last_name: '',
-            birth_date: '',
+            birth_date: '1994-10-08',
             gender: '',
             custom: false
         };
@@ -31,7 +31,22 @@ class SessionForm extends React.Component {
         return e => {
             switch (field) {
                 case "month":
-                    this.setState({ birth_date: (this.state.birth_date.slice(0, 5) + e.target.value + this.state.birth_date.slice(7)) })
+                    this.setState({ birth_date: this.state.birth_date.slice(0, 5) + e.target.value + this.state.birth_date.slice(7) });
+                    console.log(this.state.birth_date.slice(0, 5) + e.target.value + this.state.birth_date.slice(7));
+                    break;
+                case "day":
+                    this.setState({ birth_date: this.state.birth_date.slice(0, 8) + e.target.value });
+                    console.log(this.state.birth_date.slice(0, 8) + e.target.value);
+                    break;
+                case "year":
+                    if (parseInt(e.target.value) > 1900 && parseInt(e.target.value) < 2019) {
+                        this.setState({ birth_date: e.target.value + this.state.birth_date.slice(4) });
+                    } else {
+                        //in case someone tries to break my switch case, and impossible age
+                        this.setState({ birth_date: 2001 + this.state.birth_date.slice(4) })
+                    }
+                    console.log(e.target.value + this.state.birth_date.slice(4));
+                    break;
                 default:
                     break;
             }
@@ -77,6 +92,14 @@ class SessionForm extends React.Component {
                 ))}
             </ul>
         );
+    }
+
+    yearRange() {
+        let range = [];
+        for (let i = 2019; i >= 1905; i--) {
+            range.push(i);
+        }
+        return range;
     }
 
     render() {
@@ -136,10 +159,61 @@ class SessionForm extends React.Component {
                                     placeholder="New password"
                                 />
                                 <h2 className="signup-header">Birthday</h2>
-                                <input type="date" 
-                                    value={this.state.birth_date}
-                                    onChange={this.update('birth_date')}
-                                />
+                                <div className="birthday-select-container">
+                                    <select defaultValue="10" onChange={this.handleBirthday("month")}>
+                                        <option value="month" disabled>Month</option>
+                                        <option value="01">Jan</option>
+                                        <option value="02">Feb</option>
+                                        <option value="03">Mar</option>
+                                        <option value="04">Apr</option>
+                                        <option value="04">Apr</option>
+                                        <option value="05">May</option>
+                                        <option value="06">Jun</option>
+                                        <option value="07">Jul</option>
+                                        <option value="08">Aug</option>
+                                        <option value="09">Sep</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                    <select defaultValue="08" onChange={this.handleBirthday("day")}>
+                                        <option value="day" disabled>Day</option>
+                                        <option value="01">1</option>
+                                        <option value="02">2</option>
+                                        <option value="03">3</option>
+                                        <option value="04">4</option>
+                                        <option value="05">5</option>
+                                        <option value="06">6</option>
+                                        <option value="07">7</option>
+                                        <option value="08">8</option>
+                                        <option value="09">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                    <select defaultValue="1994" onChange={this.handleBirthday("year")}>
+                                        <option value="year" disabled>Year</option>
+                                        {this.yearRange().map((yr, idx) => <option key={idx} value={yr}>{yr}</option>)}
+                                    </select>
+                                </div>
                                 <div className="gender-select-container">
                                     <h2 className="signup-header">Gender</h2>
                                     <div className="gender-select">

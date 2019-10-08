@@ -57,6 +57,7 @@ h2.signup-header {
 
 .signup-names > input {
     margin-right: 10px;
+    margin-bottom: 5px;
     padding: 8px 10px;
     border: 1px solid #bdc7d8;
     border-radius: 5px;
@@ -79,6 +80,7 @@ h2.signup-header {
 }
 
 .gender-select > input {
+    margin-bottom: 2px;
     margin-left: 5px;
 }
 
@@ -91,6 +93,7 @@ h2.signup-header {
 
 .custom-gender-input-container {
     width: 400px;
+    margin-top: 20px;
 }
 
 .custom-gender-input-container > select {
@@ -143,4 +146,11 @@ span.pronoun-warning {
 
 #signup-button:hover {
     background: linear-gradient(#79bc64, #578843);
+}
+
+.birthday-select-container > select {
+    border: 1px solid #ccd0d5;
+    font-size: 13px;
+    height: 30px;
+    padding: 5px;
 }

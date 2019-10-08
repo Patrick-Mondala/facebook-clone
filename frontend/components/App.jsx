@@ -10,7 +10,7 @@ export default () => (
     <div>
         <header id="login-menu-bar">
             <div id="login">
-                <h1>facebook</h1>
+                <h1>bookface</h1>
                 <AuthRoute path="/" component={LoginFormContainer} />
             </div>
         </header>
