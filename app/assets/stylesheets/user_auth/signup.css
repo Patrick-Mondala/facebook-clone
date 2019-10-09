@@ -1,8 +1,13 @@
-.signup-container {
+.main {
     display: flex;
     background-color: #edf0f5;
     justify-content: center;
     min-width: 1035px;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
 }
 
 .signup-items {
@@ -10,7 +15,6 @@
     justify-content: space-between;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 600px;
-    min-width: 995px;
     padding: 20px;
 }
 
@@ -170,7 +174,7 @@ span.pronoun-warning {
 
 .signup-aside {
     display: flex;
-    width: 565px;
+    min-width: 565px;
     flex-direction: column;
 }
 

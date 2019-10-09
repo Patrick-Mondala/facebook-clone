@@ -1,5 +1,4 @@
 import React from 'react';
-import SignupAside from './signup_aside';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -133,7 +132,6 @@ class SessionForm extends React.Component {
                         (
                         <div className="signup-container">
                             <div className="signup-items">
-                                <SignupAside />
                                 <div className="signup-form">
                                     <h1>Sign Up</h1>
                                     <p>It's quick and easy.</p>
