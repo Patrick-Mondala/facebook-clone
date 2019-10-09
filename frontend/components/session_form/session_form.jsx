@@ -106,7 +106,10 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     <div>
                         {this.props.formType === 'Log In' ?
-                        (<div className="login-form">
+                            (<header id="login-menu-bar">
+                                <div id="login">
+                                    <h1>bacefook</h1>
+                        <div className="login-form">
                         <label>Email
                         <input type="text"
                             value={this.state.email}
@@ -122,7 +125,9 @@ class SessionForm extends React.Component {
                         <div className="login-button-container">
                             <input id="login-button" type="submit" value={this.props.formType} />
                         </div>
-                        </div>) 
+                        </div>
+                        </div>
+                        </header>) 
                         : 
                         (
                         <div className="signup-container">
