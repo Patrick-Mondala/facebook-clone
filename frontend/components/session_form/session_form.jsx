@@ -133,7 +133,7 @@ class SessionForm extends React.Component {
                         <div className="signup-container">
                             <aside className="signup-aside">
                                 {/* move this into its own functional component */}
-                                <h2>Connect with friends and the world around you on Facebook.</h2>
+                                <h2>Connect with friends and the world around you on Bacefook.</h2>
                             </aside>
                             <div className="signup-form">
                                 <h1>Sign Up</h1>
