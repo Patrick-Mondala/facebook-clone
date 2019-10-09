@@ -1,0 +1,59 @@
+.profile-navbar-container {
+    background-color: #4267B2;
+}
+
+.profile-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-navbar > li {
+    color: white;
+}
+
+.profile-navbar > li > button {
+    padding: 10px;
+}
+
+.profile-navbar > li > button:hover {
+    background-color: #385898;
+}
+
+#profile-navbar-settings {
+    color: rgb(19, 39, 78);
+}
+
+#profile-navbar-settings:hover {
+    background-color: #4267B2;
+    color: white;
+}
+
+#profile-navbar-dropdown-container {
+    background-color: white;
+    color: #1d2129;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -180px;
+    z-index: 2;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+
+#profile-navbar-dropdown > li {
+    padding: 3px 0;
+}
+
+#profile-navbar-dropdown > li > button {
+    width: 160px;
+    padding: 7px 22px;
+}
+
+#profile-navbar-dropdown > li > button:hover {
+    color: white;
+    background-color: #5070af;
+}

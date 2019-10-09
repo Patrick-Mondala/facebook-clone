@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="session-container">
-                {this.renderErrors()}
+                <div className="errors">{this.renderErrors()}</div>
                 {this.props.formType === 'Log In' ?
                 (
                 <form onSubmit={this.handleSubmit} className="login-form">
