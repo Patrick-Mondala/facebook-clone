@@ -238,6 +238,13 @@ class SessionForm extends React.Component {
         }
     }
 
+    demoLogin() {
+        return e => {
+            e.preventDefault();
+            this.props.demoLogin();
+        }
+    }
+
     render() {
         return (
             <div className="session-container">
@@ -391,7 +398,10 @@ class SessionForm extends React.Component {
                                 ) : null}
                             </div>
                             <p className="signup-terms">By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
-                            <input id="signup-button" type="submit" value={this.props.formType} />
+                            <div className="signup-and-demo-login">
+                                <input id="signup-button" type="submit" value={this.props.formType} />
+                                <button id="demo-login-button" onClick={this.demoLogin()}>Demo Login</button>
+                            </div>
                         </form>
                     </div>
                 </div>)}

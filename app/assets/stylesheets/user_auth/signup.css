@@ -154,12 +154,31 @@ span.pronoun-warning {
     text-align: center;
     padding: 0;
     font-size: 19px;
+    font-weight: bold;
     height: 37px;
     width: 192px;
     color: white;
     background: linear-gradient(#67ae55, #578843);
     box-shadow: inset 0 1px 1px #a4e388;
+    border: 1px solid;
     border-color: #3b6e22 #3b6e22 #2c5115;
+    border-radius: 3px;
+}
+
+#demo-login-button {
+    text-align: center;
+    padding: 0;
+    font-size: 19px;
+    font-weight: bold;
+    height: 37px;
+    width: 192px;
+    color: white;
+    margin-left: 15px;
+    background: linear-gradient(#ae5590, #7c4388);
+    box-shadow: inset 0 1px 1px #d188e3;
+    border: 1px solid;
+    border-color: #50226e #3f226e #2f1551;
+    border-radius: 3px;
 }
 
 #signup-button:hover {
