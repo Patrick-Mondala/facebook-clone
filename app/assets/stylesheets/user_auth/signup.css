@@ -61,19 +61,6 @@ h2.signup-header {
     font-size: 18px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: pink;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: pink;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: pink;
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: pink;
-}
-
 .signup-form > input::placeholder, .signup-names > input::placeholder, #custom-gender-input::placeholder {
     color: rgb(151, 153, 156);
 }
