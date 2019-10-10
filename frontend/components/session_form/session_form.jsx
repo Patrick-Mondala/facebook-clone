@@ -13,7 +13,10 @@ class SessionForm extends React.Component {
             last_name: '',
             birth_date: '1994-10-08',
             gender: '',
-            custom: false
+            custom: false,
+            errors: {},
+            focused: {},
+            email_message_flip: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGender = this.handleGender.bind(this);
@@ -55,8 +58,20 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         if (this.props.formType === 'Sign Up') {
             delete user['custom'];
+            delete user['errors'];
+            delete user['focused'];
+            delete user['email_message_flip'];
         }
-        this.props.processForm(user);
+        this.handleSignupError('first_name', 
+        () => this.handleSignupError('last_name',
+            () => this.handleSignupError('email',
+                () => this.handleSignupError('password',
+                    () => this.setState({ email_message_flip: false })
+                )({ target: { value: this.state.password } })
+            )({ target: { value: this.state.email } })
+        )({ target: { value: this.state.last_name } })
+        )({ target: { value: this.state.first_name }});
+        this.props.processForm(user)
     }
 
     handleGender(e) {
@@ -79,18 +94,6 @@ class SessionForm extends React.Component {
         })
     }
 
-    renderErrors() {
-        return (
-            <ul className="session-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
-
     yearRange() {
         let range = [];
         for (let i = 2019; i >= 1905; i--) {
@@ -99,13 +102,149 @@ class SessionForm extends React.Component {
         return range;
     }
 
+    //call disableFocus on all onBlur or enableFocus on all onFocus
+    enableFocus(field) {
+        return e => this.setState({ focused: { [field]: true }});
+    }
+
+    disableFocus() {
+        this.setState({focused: {}})
+    }
+
+    //don't hate me future me im sorry
+    handleSignupError(field, callback) {
+        return e => {
+            this.disableFocus();
+            let input = e.target.value;
+            let newErrors = Object.assign({},this.state.errors);
+            switch (field) {
+                case "first_name":
+                    if (!this.state.errors.first_name) {
+                        if (input.length === 0) {
+                            newErrors["first_name"] = "What's your name?";
+                        }
+                    } else {
+                        if (input.length > 0) {
+                            delete newErrors["first_name"];
+                        }
+                    }
+                    this.setState({ errors: newErrors }, callback);
+                    break;
+                case "last_name":
+                    if (!this.state.errors.last_name) {
+                        if (input.length === 0) {
+                            newErrors["last_name"] = "What's your name?";
+                        }
+                    } else {
+                        if (input.length > 0) {
+                            delete newErrors["last_name"];
+                        }
+                    }
+                    this.setState({ errors: newErrors }, callback);
+                    break;    
+                case "email":
+                    let validEmailRegex = /\S+@\S+\.\S+/;
+                    if (!this.state.errors.email) {
+                        if (input.length === 0) {
+                            this.setState({email_message_flip: false});
+                            newErrors["email"] = "You'll use this when you log in and if you ever need to reset your password.";
+                        } else if (validEmailRegex.test(input)) {
+                            delete newErrors["email"];
+                        } else {
+                            this.setState({ email_message_flip: true });
+                            newErrors["email"] = "Please enter a valid email address";
+                        }
+                    } else {
+                        if (input.length === 0 ) {
+                            this.setState({ email_message_flip: false });
+                            newErrors["email"] = "You'll use this when you log in and if you ever need to reset your password.";
+                        } else if (input.length > 0) { //check for valid email before deleting
+                            if (validEmailRegex.test(input)) {
+                                delete newErrors["email"];
+                            } else {
+                                this.setState({ email_message_flip: true });
+                                newErrors["email"] = "Please enter a valid email address";
+                            }
+                        }
+                    }
+                    this.setState({ errors: newErrors }, callback);
+                    break;
+                case "password":
+                    if (!this.state.errors.password) {
+                        if (input.length < 6) {
+                            newErrors["password"] = "Enter a combination of at least 6 characters.";
+                        }
+                    } else {
+                        if (input.length >= 6) {
+                            delete newErrors["password"];
+                        }
+                    }
+                    this.setState({ errors: newErrors }, callback);
+                    break;
+                case "gender":
+                    if (input.length === 0 && !this.state.custom) {
+                        if (!this.state.errors.gender) {
+                            newErrors["gender"] = "Please choose a gender. You can change who can see this later.";
+                        }
+                    } else {
+                        delete newErrors["gender"];
+                    }
+                    this.setState({ errors: newErrors });
+                    break;
+                case "pronoun":
+                    if (!this.state.errors.pronoun) {
+                        if (input === "default") {
+                            newErrors["pronoun"] = "Please select your pronoun.";
+                        }
+                    } else {
+                        if (input !== "default") {
+                            delete newErrors["pronoun"];
+                        }
+                    }
+                    this.setState({ errors: newErrors })
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    signupErrorMessageLabel(field) {
+        if (this.state.errors[field]) {
+            return (<label
+                id={`signup-${field}-error`}
+                className={`signup-error-message ${this.signupErrorMessageClass(field)}` + (this.state.email_message_flip && field ==="email" ? " bad-email" : "")}>
+                {this.state.errors[field]}
+            </label>)
+        }
+    }
+
+    //classes to add to error label before inputs
+    signupErrorMessageClass(field) {
+        return this.state.focused[field] ? "" : "hidden"
+    }
+
+    //classes to add to input if there's an error
+    //ADD TO ALL SIGNUP FORM TEXT INPUTS
+    signupErrorInputClass(field) {
+        if (this.state.errors[field] && !this.state.focused[field]) {
+            return "red-border";
+        }
+    }
+
+    signupErrorIcon(field) {
+        if (this.state.errors[field] && !this.state.focused[field]) {
+            return (<i id={`signup-error-icon-${field}`} className="fas fa-exclamation-circle signup-error-icon"></i>)
+        }
+    }
+
     render() {
         return (
             <div className="session-container">
-                <div className="errors">{this.renderErrors()}</div>
                 {this.props.formType === 'Log In' ?
                 (
                 <form onSubmit={this.handleSubmit} className="login-form">
+                    {this.props.errors.length === 1 ? <p className="login-error">Invalid credentials</p> : null}
                     <label>Email
                     <input type="text"
                         value={this.state.email}
@@ -131,25 +270,45 @@ class SessionForm extends React.Component {
                             <h1>Sign Up</h1>
                             <p>It's quick and easy.</p>
                             <section className="signup-names">
+                                {this.signupErrorMessageLabel('first_name')}
+                                {this.signupErrorIcon('first_name')}
                                 <input type="text" 
                                     value={this.state.first_name}
                                     onChange={this.update('first_name')}
+                                    onFocus={this.enableFocus('first_name')}
+                                    onBlur={this.handleSignupError('first_name')}
+                                    className={this.signupErrorInputClass('first_name')}
                                     placeholder="First name"
                                 />
+                                {this.signupErrorMessageLabel('last_name')}
+                                {this.signupErrorIcon('last_name')}
                                 <input type="text"
                                     value={this.state.last_name}
                                     onChange={this.update('last_name')}
+                                    onFocus={this.enableFocus('last_name')}
+                                    onBlur={this.handleSignupError('last_name')}
+                                    className={this.signupErrorInputClass('last_name')}
                                     placeholder="Last name" 
                                 />
                             </section>
+                            {this.signupErrorMessageLabel('email')}
+                            {this.signupErrorIcon('email')}
                             <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
+                                onFocus={this.enableFocus('email')}
+                                onBlur={this.handleSignupError('email')}
+                                className={this.signupErrorInputClass('email')}
                                 placeholder="Email"
                             />
+                            {this.signupErrorMessageLabel('password')}
+                            {this.signupErrorIcon('password')}
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
+                                onFocus={this.enableFocus('password')}
+                                onBlur={this.handleSignupError('password')}
+                                className={this.signupErrorInputClass('password')}
                                 placeholder="New password"
                             />
                             <h2 className="signup-header">Birthday</h2>

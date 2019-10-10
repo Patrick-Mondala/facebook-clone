@@ -210,3 +210,30 @@ span.pronoun-warning {
     margin-left: 12px;
     margin-right: 5px;
 }
+
+.red-border {
+    border-color: red !important;
+}
+
+.signup-error-icon {
+    color: rgb(199, 63, 63);
+    position: absolute;
+    font-weight: 900;
+    font-size: 26px;
+    z-index: 5;
+}
+
+#signup-error-icon-first_name, #signup-error-icon-last_name {
+    margin-top: 6px;
+    margin-left: 160px;
+}
+
+#signup-error-icon-email {
+    margin-top: 143px;
+    margin-left: 364px;
+}
+
+#signup-error-icon-password {
+    margin-top: 192px;
+    margin-left: 364px;
+}

@@ -1,6 +1,7 @@
 .navbar {
     background-color: #3b5998;
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    min-width: 1035px;
 }
 
 .hidden {
@@ -11,9 +12,10 @@
     display: block;
 }
 
-.errors {
-    position: fixed;
+.login-error {
+    position: absolute;
     margin-top: -12px;
     color: red;
-    margin-left: 5px;
+    margin-top: 49px;
+    margin-left: 8px;
 }

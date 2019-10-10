@@ -1,0 +1,162 @@
+.signup-error-message {
+    position: absolute;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    font-size: 13px;
+    min-width: 112px;
+    max-width: 300px;
+    padding: 13px;
+    line-height: 1.34;
+}
+
+#signup-first_name-error {
+    margin-top: -3px;
+    margin-left: -153px;
+}
+
+#signup-first_name-error::before {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    content: "";
+    border-left: 10px solid #be4b49;
+    margin-left: 125px;
+    z-index: 2;
+}
+
+#signup-first_name-error::after {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    content: "";
+    border-left: 11px solid rgba(139, 3, 0, .75);
+    margin-top: -1px;
+    margin-left: 14px;
+}
+
+#signup-last_name-error {
+    margin-top: 57px;
+}
+
+#signup-last_name-error::before {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: "";
+    border-bottom: 10px solid #be4b49;
+    margin-top: -23px;
+    z-index: 2;
+}
+
+#signup-last_name-error::after {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    content: "";
+    border-bottom: 11px solid rgba(139, 3, 0, .75);
+    margin-top: -24px;
+    margin-left: -112px;
+}
+
+#signup-email-error {
+    max-width: 293px;
+    padding: 13px;
+    margin-top: 135px;
+    margin-left: -334px;
+    min-width: 293px;
+}
+
+#signup-email-error::before {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    content: "";
+    border-left: 10px solid #be4b49;
+    margin-left: 306px;
+    z-index: 2;
+}
+
+#signup-email-error::after {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    content: "";
+    border-left: 11px solid rgba(139, 3, 0, .75);
+    margin-top: -18px;
+    margin-left: 139px;
+}
+
+#signup-email-error.bad-email {
+    margin-left: -241px;
+    min-width: 200px;
+}
+
+#signup-email-error.bad-email::before {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    content: "";
+    border-left: 10px solid #be4b49;
+    margin-left: 212px;
+    z-index: 2;
+}
+
+#signup-email-error.bad-email::after {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    content: "";
+    border-left: 11px solid rgba(139, 3, 0, .75);
+    margin-top: -1px;
+    margin-left: 14px;
+}
+
+#signup-password-error {
+    min-width: 250px;
+    padding: 13px;
+    margin-top: 185px;
+    margin-left: -294px;
+}
+
+#signup-password-error::before {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    content: "";
+    border-left: 10px solid #be4b49;
+    margin-left: 267px;
+    z-index: 2;
+}
+
+#signup-password-error::after {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    content: "";
+    border-left: 11px solid rgba(139, 3, 0, .75);
+    margin-top: -1px;
+    margin-left: 13px;
+}
