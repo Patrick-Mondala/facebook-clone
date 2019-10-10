@@ -62,15 +62,17 @@ class SessionForm extends React.Component {
             delete user['focused'];
             delete user['email_message_flip'];
         }
-        this.handleSignupError('first_name', 
-        () => this.handleSignupError('last_name',
-            () => this.handleSignupError('email',
-                () => this.handleSignupError('password',
-                    () => this.setState({ email_message_flip: false })
-                )({ target: { value: this.state.password } })
-            )({ target: { value: this.state.email } })
-        )({ target: { value: this.state.last_name } })
-        )({ target: { value: this.state.first_name }});
+        if (this.props.formType === 'Sign Up') {
+            this.handleSignupError('first_name', 
+                () => this.handleSignupError('last_name',
+                    () => this.handleSignupError('email',
+                        () => this.handleSignupError('password',
+                            () => this.setState({ email_message_flip: false })
+                        )({ target: { value: this.state.password } })
+                    )({ target: { value: this.state.email } })
+                )({ target: { value: this.state.last_name } })
+            )({ target: { value: this.state.first_name }});
+        }
         this.props.processForm(user)
     }
 
