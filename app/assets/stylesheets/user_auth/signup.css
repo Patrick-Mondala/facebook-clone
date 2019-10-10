@@ -150,6 +150,11 @@ span.pronoun-warning {
     font-size: 12px;
 }
 
+.signup-and-demo-login {
+    display: flex;
+    min-height: 44px;
+}
+
 #signup-button {
     text-align: center;
     padding: 0;
@@ -187,6 +192,10 @@ span.pronoun-warning {
 
 #demo-login-button:hover {
     background: linear-gradient(#c771d8, #a55290);
+}
+
+#signup-button:active, #demo-login-button:active {
+    margin-top: 1px;
 }
 
 .birthday-select-container > select {
