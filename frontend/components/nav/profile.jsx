@@ -17,6 +17,21 @@ class ProfileNav extends React.Component {
         super(props);
         this.toggleDropDown = this.toggleDropDown.bind(this);
         this.state = {dropDown: false};
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClick);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClick)
+    }
+
+    handleClick(e) {
+        if (!this.node.contains(e.target)) {
+            this.setState({dropDown: false});
+        }
     }
 
     toggleDropDown() {
@@ -27,7 +42,7 @@ class ProfileNav extends React.Component {
         return (
         <div className="profile-navbar-container">
             <ul className="profile-navbar">
-                <li id="profile-navbar-settings-container">
+                <li ref={node => this.node = node} id="profile-navbar-settings-container">
                     <button id="profile-navbar-settings" onClick={this.toggleDropDown}>▾</button>
                     {this.state.dropDown ? 
                     <div id="profile-navbar-dropdown-container">
