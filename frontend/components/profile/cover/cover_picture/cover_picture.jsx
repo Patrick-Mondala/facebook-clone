@@ -9,7 +9,7 @@ export default ({ user, currentUser }) => (
             />) : null}
         {user.id === currentUser.id ?
         <div className="profile-cover-picture-edit-button-container"> 
-            <button>{user.cover_picture ? "Edit Cover Photo" : "Add Cover Photo"}</button>
+                <button className="profile-cover-picture-edit-button"><i id="profile-cover-profile-picture-edit-camera-icon" class="fas fa-camera"></i>{user.cover_picture ? "Edit Cover Photo" : "Add Cover Photo"}</button>
         </div> : null}
     </div>
 )
