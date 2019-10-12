@@ -57,3 +57,32 @@
     color: white;
     background-color: #5070af;
 }
+
+li.profile-navbar-profile-link > a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+li.profile-navbar-profile-link > a:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.profile-navbar-profile-picture-container {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.profile-navbar-profile-picture {
+    width: auto;
+    height: 100%;
+    margin-left: -5px;
+}

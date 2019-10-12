@@ -1,0 +1,50 @@
+.profile-container {
+    margin-top: -20px;
+}
+
+.profile-cover-picture-container {
+    height: 200px;
+    width: 850px;
+    background-color: #1c1e21;
+}
+
+.profile-cover-profile-picture-cropper {
+    display: inline-block;
+    position: relative;
+    width: 168px;
+    height: 168px;
+    overflow: hidden;
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
+    margin-top: -150px;
+    margin-left: 20px;
+}
+
+.profile-cover-profile-picture {
+    width: auto;
+    height: 100%;
+    margin-left: -42px;
+}
+
+.profile-cover-profile-name-container {
+    margin-left: 210px;
+    margin-top: -70px;
+}
+
+.profile-cover-profile-name {
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .4);
+}
+
+.profile-cover-profile-nav {
+    width: 848px;
+    height: 44px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-top: none;
+    margin-top: 12px;
+}
