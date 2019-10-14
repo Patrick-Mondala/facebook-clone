@@ -8,7 +8,7 @@ export default ({ user, currentUser }) => (
         />
             {user.id === currentUser.id ?
                 <div className="profile-cover-profile-picture-edit-button-container">
-                    <button className="profile-cover-profile-picture-edit-button"><i id="profile-cover-profile-picture-edit-camera-icon" class="fas fa-camera"></i>Update</button>
+                    <button className="profile-cover-profile-picture-edit-button"><i id="profile-cover-profile-picture-edit-camera-icon" className="fas fa-camera"></i>Update</button>
                 </div> : null}
         </div>
     </div>

@@ -3,7 +3,8 @@
 }
 
 .profile-cover-picture-container {
-    height: 205px;
+    min-height: 205px;
+    max-height: 315px;
     width: 850px;
     background-color: #1c1e21;
 }
@@ -18,7 +19,7 @@
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
     margin-top: -150px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .profile-cover-profile-picture {
@@ -69,6 +70,10 @@
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
+}
+
+.profile-cover-profile-picture-edit-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .profile-cover-picture-edit-button-container {

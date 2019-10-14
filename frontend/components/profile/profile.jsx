@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileCover from './cover/profile_cover';
+import ProfileSidebar from './sidebar/profile_sidebar';
 
 export default class Profile extends React.Component {
     componentDidMount() {
@@ -16,6 +17,7 @@ export default class Profile extends React.Component {
         return (
             <div className="profile-container">
                 <ProfileCover user={this.props.user} currentUser={this.props.currentUser} />
+                <ProfileSidebar user={this.props.user} currentUser={this.props.currentUser} />
             </div>
         )
     }

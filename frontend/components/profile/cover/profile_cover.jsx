@@ -11,7 +11,7 @@ export default class ProfileCover extends React.Component {
                 <ProfilePicture user={this.props.user} currentUser={this.props.currentUser} />
                 <div className="profile-cover-profile-name-container">
                     <span className="profile-cover-profile-name">{this.props.user.first_name} {this.props.user.last_name}</span>
-                    </div>
+                </div>
                 <ProfileNav />
             </div>
         )
