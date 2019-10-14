@@ -1,0 +1,29 @@
+.profile-sidebar-profile-photos-container {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .15);
+    width: 297px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.profile-sidebar-profile-photos-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-sidebar-profile-photos-icon-container {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    background-color: #a5d950;
+    border-radius: 50%;
+    margin-right: 9px;
+}
+
+.profile-sidebar-profile-photos-icon {
+    color: white;
+    margin-left: 4px;
+    margin-top: 4px;
+}

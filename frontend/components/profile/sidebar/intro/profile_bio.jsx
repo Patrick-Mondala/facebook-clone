@@ -26,19 +26,19 @@ export default class ProfileBio extends React.Component {
 
     emptyBioContent() {
         return (
-            <div className="profile-cover-profile-bio-empty-container">
+            <div className="profile-sidebar-profile-bio-empty-container">
                 {this.ownsProfile() && !this.state.addingBio ? 
-                (<div className="profile-cover-profile-bio-empty"><i className="far fa-comment-alt profile-cover-bio-empty-icon"></i>
-                <span className="profile-cover-profile-bio-empty-sample">Add a short bio to tell people more about yourself.</span>
-                <div className="profile-cover-profile-empty-add-bio-button-container"><button onClick={this.toggleAddingBio} className="profile-cover-profile-empty-add-bio-button">Add Bio</button></div>
+                (<div className="profile-sidebar-profile-bio-empty"><i className="far fa-comment-alt profile-sidebar-bio-empty-icon"></i>
+                <span className="profile-sidebar-profile-bio-empty-sample">Add a short bio to tell people more about yourself.</span>
+                <div className="profile-sidebar-profile-empty-add-bio-button-container"><button onClick={this.toggleAddingBio} className="profile-sidebar-profile-empty-add-bio-button">Add Bio</button></div>
                 </div>) : this.ownsProfile() ? (
-                <div className="profile-cover-profile-bio-adding-bio-container">
-                    <textarea className="profile-cover-profile-bio-adding-bio-input" cols="39" rows="4" placeholder="Describe who you are"></textarea>
-                    <div className="profile-cover-profile-bio-adding-bio-buttons-container">
-                        <div className="profile-cover-profile-bio-adding-bio-buttons">
-                            <span className="profile-cover-profile-bio-adding-bio-buttons-visibility-warning-container"><i class="fas fa-globe-americas profile-cover-profile-bio-adding-bio-buttons-visibility-warning-icon"></i>Public</span>
-                            <button onClick={this.toggleAddingBio} className="profile-cover-profile-bio-adding-bio-cancel-button">Cancel</button>
-                            <button className="profile-cover-profile-bio-adding-bio-save-button">Save</button>
+                <div className="profile-sidebar-profile-bio-adding-bio-container">
+                    <textarea className="profile-sidebar-profile-bio-adding-bio-input" cols="39" rows="4" placeholder="Describe who you are"></textarea>
+                    <div className="profile-sidebar-profile-bio-adding-bio-buttons-container">
+                        <div className="profile-sidebar-profile-bio-adding-bio-buttons">
+                            <span className="profile-sidebar-profile-bio-adding-bio-buttons-visibility-warning-container"><i className="fas fa-globe-americas profile-sidebar-profile-bio-adding-bio-buttons-visibility-warning-icon"></i>Public</span>
+                            <button onClick={this.toggleAddingBio} className="profile-sidebar-profile-bio-adding-bio-cancel-button">Cancel</button>
+                            <button className="profile-sidebar-profile-bio-adding-bio-save-button">Save</button>
                         </div>
                     </div>
                 </div>) : null }

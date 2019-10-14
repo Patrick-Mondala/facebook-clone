@@ -45,57 +45,57 @@
     font-size: 16px;
 }
 
-.profile-cover-profile-bio-empty {
+.profile-sidebar-profile-bio-empty {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.profile-cover-bio-empty-icon {
+.profile-sidebar-bio-empty-icon {
     font-size: 20px;
 }
 
-.profile-cover-profile-bio-empty-sample {
+.profile-sidebar-profile-bio-empty-sample {
     color: #1d2129;
     opacity: 0.7;
     padding: 6px;
 }
 
-.profile-cover-profile-bio-empty-container {
+.profile-sidebar-profile-bio-empty-container {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
-.profile-cover-profile-empty-add-bio-button-container {
+.profile-sidebar-profile-empty-add-bio-button-container {
     display: flex;
     justify-content: center;
     width:100%;
     height: 25px;
 }
 
-.profile-cover-profile-empty-add-bio-button {
+.profile-sidebar-profile-empty-add-bio-button {
     position: absolute;
     color: #3578e5;
 }
 
-.profile-cover-profile-empty-add-bio-button:hover {
+.profile-sidebar-profile-empty-add-bio-button:hover {
     border-bottom: 1px solid #3578e5;
 }
 
-.profile-cover-profile-bio-adding-bio-input {
+.profile-sidebar-profile-bio-adding-bio-input {
     text-align: center;
     resize: none;
     width: 263px;
-    height: 60px;
+    height: 57px;
     padding: 8px 16px;
     border-top: 1px solid #edf0f5;
     border-left: 1px solid #edf0f5;
     border-right: 1px solid #edf0f5;
 }
 
-.profile-cover-profile-bio-adding-bio-buttons-container {
+.profile-sidebar-profile-bio-adding-bio-buttons-container {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -106,57 +106,57 @@
     margin-top: -3px;
 }
 
-.profile-cover-profile-bio-adding-bio-buttons-visibility-warning-container {
+.profile-sidebar-profile-bio-adding-bio-buttons-visibility-warning-container {
     display: flex;
     align-items: center;
     color: #78797a;  
     margin-right: 6px;
 }
 
-.profile-cover-profile-bio-adding-bio-buttons-visibility-warning-icon {
+.profile-sidebar-profile-bio-adding-bio-buttons-visibility-warning-icon {
     font-size: 14px;
     margin-right: 5px;
 }
 
-.profile-cover-profile-bio-adding-bio-buttons {
+.profile-sidebar-profile-bio-adding-bio-buttons {
     display: flex;
     justify-content: center;
 }
 
-.profile-cover-profile-bio-adding-bio-buttons > button {
+.profile-sidebar-profile-bio-adding-bio-buttons > button {
     padding: 4px 8px;
     margin-left: 4px;
     border-radius: 2px;
     font-weight: bold;
 }
 
-.profile-cover-profile-bio-adding-bio-cancel-button {
+.profile-sidebar-profile-bio-adding-bio-cancel-button {
     background-color: #f5f6f7;
     border: 1px solid #ccd0d5;
     color: #4b4f56;
 }
 
-.profile-cover-profile-bio-adding-bio-cancel-button:hover {
+.profile-sidebar-profile-bio-adding-bio-cancel-button:hover {
     background-color: #ebedf0;
 }
 
-.profile-cover-profile-bio-adding-bio-cancel-button:active {
+.profile-sidebar-profile-bio-adding-bio-cancel-button:active {
     background-color: #dddfe2;
     border-color: #bec3c9;
 }
 
-.profile-cover-profile-bio-adding-bio-save-button {
+.profile-sidebar-profile-bio-adding-bio-save-button {
     color: white;
     background-color: #4267b2;
     border: 1px solid #4267b2;
 }
 
-.profile-cover-profile-bio-adding-bio-save-button:hover {
+.profile-sidebar-profile-bio-adding-bio-save-button:hover {
     background-color: #365899;
     border-color: #365899;
 }
 
-.profile-cover-profile-bio-adding-bio-save-button:active {
+.profile-sidebar-profile-bio-adding-bio-save-button:active {
     background-color: #29487d;
     border-color: #29487d;
 }
