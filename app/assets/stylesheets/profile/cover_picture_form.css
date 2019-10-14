@@ -1,0 +1,107 @@
+.profile-cover-picture-form-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+.profile-cover-picture-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2129;
+}
+
+.profile-cover-picture-form-input-label-icon {
+    font-weight: 100;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-top: 22px;
+    height: 50px;
+}
+
+.profile-cover-picture-form-input-label-upload-container-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: #5f5f5f;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 100px;
+}
+
+.profile-cover-picture-form-input-label-upload-container-message:hover {
+    background-color: #f5f6f7;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.profile-cover-picture-form-input-label-upload-container-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 850px;
+    color: #5f5f5f;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-cover-picture-form-input-label-upload-container-preview > img {
+    min-height: 205px;
+    max-height: 315px;
+}
+
+.profile-cover-picture-form-input-label-upload-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.profile-cover-picture-form-input-label-upload-buttons-container > button {
+    padding: 10px 180px;
+    margin-left: 4px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.profile-cover-picture-form-input-label-upload-cancel-button {
+    background-color: #f5f6f7;
+    border: 1px solid #ccd0d5;
+    color: #4b4f56;
+}
+
+.profile-cover-picture-form-input-label-upload-cancel-button:hover {
+    background-color: #ebedf0;
+}
+
+.profile-cover-picture-form-input-label-upload-cancel-button:active {
+    transform: scale(.98);
+    background-color: #dddfe2;
+    border-color: #bec3c9;
+}
+
+.profile-cover-picture-form-input-label-upload-save-button {
+    color: white;
+    background-color: #4267b2;
+    border: 1px solid #4267b2;
+}
+
+.profile-cover-picture-form-input-label-upload-save-button:hover {
+    background-color: #365899;
+    border-color: #365899;
+}
+
+.profile-cover-picture-form-input-label-upload-save-button:active {
+    transform: scale(.98);
+    background-color: #29487d;
+    border-color: #29487d;
+}

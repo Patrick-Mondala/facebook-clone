@@ -51,10 +51,10 @@ class ProfileCoverPictureForm extends React.Component {
                     </button>
                 </span>
                 <input onChange={this.handleFile} type="file" id="profile-cover-picture-form-input" className="inputfile" />
-                {this.state.profilePictureUrl ?
+                {this.state.coverPictureUrl ?
                     <div className="profile-cover-picture-form-input-label-upload-container-preview-container">
                         <div className="profile-cover-picture-form-input-label-upload-container-preview">
-                            <img src={this.state.profilePictureUrl} />
+                            <img src={this.state.coverPictureUrl} />
                         </div>
                         <div className="profile-cover-picture-form-input-label-upload-buttons-container">
                             <button

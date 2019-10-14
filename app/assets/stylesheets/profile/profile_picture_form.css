@@ -81,6 +81,7 @@
 }
 
 .profile-picture-form-input-label-upload-container-preview > img {
+    max-width: 168px;
     max-height: 168px;
 }
 
