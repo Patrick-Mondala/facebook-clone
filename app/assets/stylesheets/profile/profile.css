@@ -12,6 +12,7 @@
 .profile-cover-profile-picture-cropper {
     display: inline-block;
     position: relative;
+    background-color: white;
     width: 168px;
     height: 168px;
     overflow: hidden;
@@ -23,9 +24,8 @@
 }
 
 .profile-cover-profile-picture {
-    width: auto;
+    width: 100%;
     height: 100%;
-    margin-left: -42px;
 }
 
 .profile-cover-profile-name-container {

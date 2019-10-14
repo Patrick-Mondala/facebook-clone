@@ -42,25 +42,90 @@
 	z-index: -1;
 }
 
-.profile-picture-form-input-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #5f5f5f;
-    font-size: 16px;
-    font-weight: 600;
-}
-
 .profile-picture-form-input-label-icon {
     font-weight: 100;
     font-size: 24px;
     margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 22px;
     height: 50px;
 }
 
-.profile-picture-form-input-label:hover {
+.profile-picture-form-input-label-upload-container-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: #5f5f5f;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 100px;
+}
+
+.profile-picture-form-input-label-upload-container-message:hover {
     background-color: #f5f6f7;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.profile-picture-form-input-label-upload-container-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #5f5f5f;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 100px;
+}
+
+.profile-picture-form-input-label-upload-container-preview > img {
+    max-height: 168px;
+}
+
+.profile-picture-form-input-label-upload-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.profile-picture-form-input-label-upload-buttons-container > button {
+    padding: 10px 60px;
+    margin-left: 4px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.profile-picture-form-input-label-upload-cancel-button {
+    background-color: #f5f6f7;
+    border: 1px solid #ccd0d5;
+    color: #4b4f56;
+}
+
+.profile-picture-form-input-label-upload-cancel-button:hover {
+    background-color: #ebedf0;
+}
+
+.profile-picture-form-input-label-upload-cancel-button:active {
+    transform: scale(.98);
+    background-color: #dddfe2;
+    border-color: #bec3c9;
+}
+
+.profile-picture-form-input-label-upload-save-button {
+    color: white;
+    background-color: #4267b2;
+    border: 1px solid #4267b2;
+}
+
+.profile-picture-form-input-label-upload-save-button:hover {
+    background-color: #365899;
+    border-color: #365899;
+}
+
+.profile-picture-form-input-label-upload-save-button:active {
+    transform: scale(.98);
+    background-color: #29487d;
+    border-color: #29487d;
 }

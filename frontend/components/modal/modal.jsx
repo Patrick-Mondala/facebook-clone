@@ -2,15 +2,19 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ProfilePictureForm from '../profile/cover/profile_picture/profile_picture_form';
+import ProfileCoverPictureForm from '../profile/cover/cover_picture/cover_picture_form';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, user, currentUser }) {
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
         case 'addProfilePicture':
-            component = <ProfilePictureForm />;
+            component = <ProfilePictureForm user={user} currentUser={currentUser} />;
+            break;
+        case 'addCoverPicture':
+            component = <ProfileCoverPictureForm user={user} currentUser={currentUser} />
             break;
         default:
             return null;

@@ -141,6 +141,7 @@
 }
 
 .profile-sidebar-profile-bio-adding-bio-cancel-button:active {
+    transform: scale(.98);
     background-color: #dddfe2;
     border-color: #bec3c9;
 }
@@ -157,6 +158,7 @@
 }
 
 .profile-sidebar-profile-bio-adding-bio-save-button:active {
+    transform: scale(.98);
     background-color: #29487d;
     border-color: #29487d;
 }
