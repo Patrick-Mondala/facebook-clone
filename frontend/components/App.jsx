@@ -1,13 +1,12 @@
 import React from "react";
-import GreetingContainer from './greeting/greeting_container';
-import { Route } from 'react-router-dom';
 import Main from './main';
 import NavBar from './nav/navbar';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from './modal/modal';
 
 //App
 export default () => (
     <div>
+        <Modal />
         <NavBar />
         <Main />
     </div>

@@ -1,0 +1,66 @@
+.profile-cover-profile-picture-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.profile-cover-profile-picture-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2129;
+}
+
+.exit-modal-button {
+    font-size: 12px;
+    font-weight: bold;
+    color: #c9c6c6;
+    margin-bottom: -2px;
+}
+
+.exit-modal-button:hover {
+    color: #a0a0a0;
+}
+
+.exit-modal-button:active {
+    color: #696969;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.profile-picture-form-input-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f5f5f;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-picture-form-input-label-icon {
+    font-weight: 100;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.profile-picture-form-input-label:hover {
+    background-color: #f5f6f7;
+    border-radius: 3px;
+    cursor: pointer;
+}
