@@ -85,7 +85,7 @@ class ProfileBio extends React.Component {
 
     render() {
         return (
-            <div className="profile-sidebar-profile-bio-container">
+            <div id={!this.hasBio() && this.props.user.id !== this.props.currentUser.id ? "hidden" : ""} className="profile-sidebar-profile-bio-container">
                 {this.hasBio() ? this.withBioContent() : this.emptyBioContent() }
             </div>
         )

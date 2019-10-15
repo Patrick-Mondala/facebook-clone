@@ -217,8 +217,11 @@
     margin-top: 10px;
 }
 
-.profile-sidebar-intro-details-list {
+.profile-sidebar-intro-details-list-border-top {
     border-top: 1px solid #e7e7e7;
+}
+
+.profile-sidebar-intro-details-list {
     padding: 10px 0;
 }
 
@@ -242,4 +245,8 @@ li.profile-sidebar-details-workplace-container > i {
 
 li.profile-sidebar-details-current_city-container > i {
     margin-right: 7px;
+}
+
+#hidden {
+    display: none;
 }
