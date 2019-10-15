@@ -59,3 +59,12 @@
     margin-top: 15px;
     letter-spacing: 0.8px;
 }
+
+#profile-cover-profile-picture-edit-camera-icon-non-hover {
+    position: absolute;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+    margin-top: 17px;
+    margin-left: 7px;
+}
