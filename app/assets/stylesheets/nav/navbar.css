@@ -2,6 +2,7 @@
     background-color: #4267b2;
     border-bottom: 1px solid #29487d;
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    width: 100%;
     min-width: 1035px;
 }
 

@@ -251,7 +251,7 @@ class SessionForm extends React.Component {
                 {this.props.formType === 'Log In' ?
                 (
                 <form onSubmit={this.handleSubmit} className="login-form">
-                    {this.props.errors.length === 1 ? <p className="login-error">Invalid credentials</p> : null}
+                    {this.props.errors.length === 1 && this.props.errors[0] === "Invalid email/password combination" ? <p className="login-error">Invalid credentials</p> : null}
                     <label>Email
                     <input type="text"
                         value={this.state.email}
