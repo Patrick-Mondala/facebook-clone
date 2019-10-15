@@ -23,13 +23,7 @@ class ProfileCoverPictureForm extends React.Component {
             coverPictureUrl: fileReader.result
         })
 
-        let fileTypes = [
-            'jpg',
-            'jpeg',
-            'png'
-        ];
-        file && fileTypes.includes(file.name.split('.').pop().toLowerCase()) ?
-            fileReader.readAsDataURL(file) : this.setState();
+        file ? fileReader.readAsDataURL(file) : this.setState();
     }
 
     handleSubmit(e) {
@@ -50,7 +44,7 @@ class ProfileCoverPictureForm extends React.Component {
                         onClick={this.props.closeModal}>X
                     </button>
                 </span>
-                <input onChange={this.handleFile} type="file" id="profile-cover-picture-form-input" className="inputfile" />
+                <input onChange={this.handleFile} type="file" id="profile-cover-picture-form-input" className="inputfile" accept="image/*"/>
                 {this.state.coverPictureUrl ?
                     <div className="profile-cover-picture-form-input-label-upload-container-preview-container">
                         <div className="profile-cover-picture-form-input-label-upload-container-preview">
@@ -80,7 +74,7 @@ class ProfileCoverPictureForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    formType: 'addCoverPicture'
+    formType: 'editCoverPicture'
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -63,7 +63,7 @@ class ProfileBio extends React.Component {
 
     withBioContent() {
         return (
-            <div className="profile-cover-profile-bio-container">
+            <div className="profile-sidebar-profile-bio-container">
                 { this.ownsProfile() && this.state.addingBio ? (
                 <div className="profile-sidebar-profile-bio-adding-bio-container">
                     <textarea onChange={this.handleChange} value={this.state.bio} className="profile-sidebar-profile-bio-adding-bio-input" cols="39" rows="4" placeholder="Describe who you are"></textarea>
@@ -75,9 +75,9 @@ class ProfileBio extends React.Component {
                         </div>
                     </div>
                     </div>) : (
-                    <div className="profile-cover-profile-bio-content-container">
-                        <p className="profile-cover-profile-bio-content">{ this.props.user.bio }</p>
-                            { this.ownsProfile() ? <button className="profile-cover-profile-bio-content-edit-button" onClick={this.toggleAddingBio}>Edit Bio</button> : null}
+                    <div className="profile-sidebar-profile-bio-content-container">
+                        <p className="profile-sidebar-profile-bio-content">{ this.props.user.bio }</p>
+                            { this.ownsProfile() ? <button className="profile-sidebar-profile-bio-content-edit-button" onClick={this.toggleAddingBio}>Edit Bio</button> : null}
                     </div>) }
             </div>
         )
@@ -85,7 +85,7 @@ class ProfileBio extends React.Component {
 
     render() {
         return (
-            <div className="profile-cover-profile-bio-container">
+            <div className="profile-sidebar-profile-bio-container">
                 {this.hasBio() ? this.withBioContent() : this.emptyBioContent() }
             </div>
         )

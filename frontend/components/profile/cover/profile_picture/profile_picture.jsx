@@ -41,7 +41,7 @@ class ProfilePicture extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    openModal: () => dispatch(openModal('addProfilePicture'))
+    openModal: () => dispatch(openModal('editProfilePicture'))
 })
 
 export default connect(

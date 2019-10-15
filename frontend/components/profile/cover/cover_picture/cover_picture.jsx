@@ -23,7 +23,7 @@ const ProfileCoverPicture = ({ user, currentUser, openModal }) => (
 )
 
 const mapDispatchToProps = dispatch => ({
-    openModal: () => dispatch(openModal('addCoverPicture'))
+    openModal: () => dispatch(openModal('editCoverPicture'))
 });
 
 export default connect(

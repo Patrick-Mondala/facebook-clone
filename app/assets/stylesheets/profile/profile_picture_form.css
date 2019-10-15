@@ -93,7 +93,6 @@
 
 .profile-picture-form-input-label-upload-buttons-container > button {
     padding: 10px 60px;
-    margin-left: 4px;
     border-radius: 2px;
     font-weight: bold;
 }
@@ -118,6 +117,7 @@
     color: white;
     background-color: #4267b2;
     border: 1px solid #4267b2;
+    margin-left: 4px;
 }
 
 .profile-picture-form-input-label-upload-save-button:hover {

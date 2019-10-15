@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ProfilePictureForm from '../profile/cover/profile_picture/profile_picture_form';
 import ProfileCoverPictureForm from '../profile/cover/cover_picture/cover_picture_form';
+import ProfileSidebarDetailsForm from '../profile/sidebar/intro/profile_details_form';
 
 function Modal({ modal, closeModal, user, currentUser }) {
     if (!modal) {
@@ -10,11 +11,14 @@ function Modal({ modal, closeModal, user, currentUser }) {
     }
     let component;
     switch (modal) {
-        case 'addProfilePicture':
+        case 'editProfilePicture':
             component = <ProfilePictureForm user={user} currentUser={currentUser} />;
             break;
-        case 'addCoverPicture':
+        case 'editCoverPicture':
             component = <ProfileCoverPictureForm user={user} currentUser={currentUser} />
+            break;
+        case 'editProfileSidebarDetails':
+            component = <ProfileSidebarDetailsForm user={user} currentUser={currentUser} />
             break;
         default:
             return null;

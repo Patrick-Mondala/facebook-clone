@@ -1,0 +1,110 @@
+.profile-sidebar-details-form-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+.profile-sidebar-details-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2129;
+}
+
+.profile-sidebar-details-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.profile-sidebar-details-buttons-container > button {
+    padding: 10px 80px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.profile-sidebar-details-cancel-button {
+    background-color: #f5f6f7;
+    border: 1px solid #ccd0d5;
+    color: #4b4f56;
+}
+
+.profile-sidebar-details-cancel-button:hover {
+    background-color: #ebedf0;
+}
+
+.profile-sidebar-details-cancel-button:active {
+    transform: scale(.98);
+    background-color: #dddfe2;
+    border-color: #bec3c9;
+}
+
+.profile-sidebar-details-save-button {
+    color: white;
+    background-color: #4267b2;
+    border: 1px solid #4267b2;
+    margin-left: 5px;
+}
+
+.profile-sidebar-details-save-button:hover {
+    background-color: #365899;
+    border-color: #365899;
+}
+
+.profile-sidebar-details-save-button:active {
+    transform: scale(.98);
+    background-color: #29487d;
+    border-color: #29487d;
+}
+
+.profile-sidebar-details-form-list {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.profile-sidebar-details-form-list > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    font-size: 20px;
+    width: 422px;
+}
+
+.profile-sidebar-details-form-list > li > div > i {
+    margin-right: 5px;
+}
+
+.profile-sidebar-details-form-list > li:last-of-type > div {
+    padding-left: 3px;
+} 
+
+.profile-sidebar-details-form-list > li > input {
+    width: 263px;
+    padding: 4px;
+    border: 1px solid #edf0f5;
+}
+
+.profile-sidebar-details-form-list-workplace > div > i {
+    margin-left: 1px;
+}
+
+.profile-sidebar-details-form-list-workplace > div > span {
+    margin-left: 4px;
+}
+
+.profile-sidebar-details-form-list-current_city > div > span {
+    margin-left: 2px;
+}
+
+.profile-sidebar-details-form-list-hometown > div > span {
+    margin-left: 6px;
+}

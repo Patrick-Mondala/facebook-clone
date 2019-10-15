@@ -163,20 +163,20 @@
     border-color: #29487d;
 }
 
-.profile-cover-profile-bio-container {
+.profile-sidebar-profile-bio-container {
     display: flex;
     margin-top: 10px;
     justify-content: center;
     font-size: 12px;
 }
 
-.profile-cover-profile-bio-content {
+.profile-sidebar-profile-bio-content {
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
 }
 
-.profile-cover-profile-bio-content-edit-button {
+.profile-sidebar-profile-bio-content-edit-button {
     padding: 6px 124px;
     background-color: #f5f6f7;
     border: 1px solid #ccd0d5;
@@ -184,12 +184,62 @@
     font-weight: bold;
 }
 
-.profile-cover-profile-bio-content-edit-button:hover {
+.profile-sidebar-profile-bio-content-edit-button:hover {
     background-color: #ebedf0;
 }
 
-.profile-cover-profile-bio-content-edit-button:active {
+.profile-sidebar-profile-bio-content-edit-button:active {
     transform: scale(.98);
     background-color: #dddfe2;
     border-color: #bec3c9;
+}
+
+.profile-sidebar-intro-details-edit-button {
+    padding: 6px 112px;
+    width: 70px;
+    background-color: #f5f6f7;
+    border: 1px solid #ccd0d5;
+    color: #4b4f56;
+    font-weight: bold;
+}
+
+.profile-sidebar-intro-details-edit-button:hover {
+    background-color: #ebedf0;
+}
+
+.profile-sidebar-intro-details-edit-button:active {
+    transform: scale(.98);
+    background-color: #dddfe2;
+    border-color: #bec3c9;
+}
+
+.profile-sidebar-intro-details-container {
+    margin-top: 10px;
+}
+
+.profile-sidebar-intro-details-list {
+    border-top: 1px solid #e7e7e7;
+    padding: 10px 0;
+}
+
+.profile-sidebar-intro-details-list > li {
+    padding: 5px 0;
+}
+
+.profile-sidebar-intro-details-list > li > i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.profile-sidebar-intro-details-list > li:last-of-type > i {
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+li.profile-sidebar-details-workplace-container > i {
+    margin-right: 9px;
+}
+
+li.profile-sidebar-details-current_city-container > i {
+    margin-right: 7px;
 }
