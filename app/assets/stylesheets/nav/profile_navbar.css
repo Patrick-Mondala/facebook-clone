@@ -27,7 +27,14 @@
 
 #profile-navbar-settings:hover {
     background-color: #4267B2;
+}
+
+#profile-navbar-settings:active {
     color: white;
+}
+
+button.navbar-settings-white {
+    color: white !important;
 }
 
 #profile-navbar-dropdown-container {

@@ -56,7 +56,7 @@ class ProfileNav extends React.Component {
                     </Link>
                 </li>
                 <li ref={node => this.node = node} id="profile-navbar-settings-container">
-                    <button id="profile-navbar-settings" onClick={this.toggleDropDown}>▾</button>
+                    <button id="profile-navbar-settings" className={this.state.dropDown ? "navbar-settings-white" : ""} onClick={this.toggleDropDown}>▾</button>
                     {this.state.dropDown ? 
                     <div id="profile-navbar-dropdown-container">
                         <ul id="profile-navbar-dropdown">
