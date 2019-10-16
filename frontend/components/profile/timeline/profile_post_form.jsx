@@ -80,15 +80,15 @@ class ProfilePostForm extends React.Component {
                         placeholder={`What's on your mind, ${this.props.currentUser.first_name}?`}>
                     </textarea>
                 </div>
-                <div className="profile-post-form-post-button-container">
                     {this.state.focused ?
-                        <button
+                        <div className="profile-post-form-post-button-container">
+                            <button
                             id={this.state.body ? "" : "profile-post-form-post-button-disabled"}
                             className="profile-post-form-post-button"
                             disabled={!this.state.body}
                             onClick={this.handleSubmit}
-                        >Post</button> : null}
-                </div>
+                            >Post</button>
+                        </div> : null}
             </div>
         )
     }
