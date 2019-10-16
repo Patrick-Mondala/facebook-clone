@@ -1,0 +1,1 @@
+json.extract! post, :id, :author_id, :timeline_owner_id, :body

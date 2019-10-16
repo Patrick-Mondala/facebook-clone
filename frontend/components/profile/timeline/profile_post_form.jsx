@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createPost } from '../../../actions/post_actions';
 
 class ProfilePostForm extends React.Component {
     constructor(props) {
@@ -30,6 +31,12 @@ class ProfilePostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append('post[body]', this.state.body);
+        formData.append('post[author_id]', this.props.currentUser.id);
+        formData.append('post[timeline_owner_id]', this.props.user.id);
+        this.props.createPost(this.props.currentUser.id, formData);
+        this.setState({body: ""}, this.disableFocus);
     }
 
     enableFocus() {
@@ -44,10 +51,6 @@ class ProfilePostForm extends React.Component {
         if (!this.postFormRef.current.contains(e.target)) {
             this.disableFocus();
         }
-    }
-
-    profilePostFormHtml() {
-        return 
     }
 
     render() {
@@ -94,7 +97,7 @@ class ProfilePostForm extends React.Component {
 
 //change updateUser to createPost
 const mapDispatchToProps = dispatch => ({
-    updateUser: (userId, user) => dispatch(updateUser(userId, user))
+    createPost: (userId, post) => dispatch(createPost(userId, post))
 });
 
 export default connect(

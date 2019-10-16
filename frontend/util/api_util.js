@@ -15,3 +15,16 @@ export const updateUser = (userId, user) => $.ajax({
     contentType: false,
     processData: false
 });
+
+export const createPost = (userId, formData) => $.ajax({
+    method: "POST",
+    url: `api/users/${userId}/posts`,
+    data: formData,
+    contentType: false,
+    processData: false
+});
+
+export const fetchTimelinePosts = userId => $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}/posts`
+});
