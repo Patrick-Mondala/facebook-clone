@@ -11,7 +11,7 @@ class ProfileSidebarDetails extends React.Component {
                     {user.workplace ? <li className="profile-sidebar-details-workplace-container"><i className="fas fa-briefcase"></i> Works at {user.workplace}</li> : null}
                     {user.education ? <li><i className="fas fa-graduation-cap"></i> Went to {user.education}</li> : null}
                     {user.current_city ? <li className="profile-sidebar-details-current_city-container"><i className="fas fa-home"></i> Currently in {user.current_city}</li> : null}
-                    {user.hometown ? <li><i className="fas fa-map-marker-alt"></i> From {user.hometown}</li> : null}
+                    {user.hometown ? <li className="profile-sidebar-details-hometown-container"><i className="fas fa-map-marker-alt"></i> From {user.hometown}</li> : null}
                 </ul>
                 {user.id === this.props.currentUser.id ? 
                 <button onClick={this.props.openModal} className="profile-sidebar-intro-details-edit-button">
