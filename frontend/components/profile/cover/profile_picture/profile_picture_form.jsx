@@ -18,11 +18,16 @@ class ProfilePictureForm extends React.Component {
         let file = e.currentTarget.files[0];
         let fileReader = new FileReader();
 
-        fileReader.onloadend = () => this.setState({
-            profile_picture: file,
-            profilePictureUrl: fileReader.result
-        })
-        
+        fileReader.onloadend = () => {
+            if (file.size < 2500000) {
+                this.setState({
+                    profile_picture: file,
+                    profilePictureUrl: fileReader.result
+                });
+            } else {
+                alert("File too large (must be less than 2.5mb)");
+            }
+        }        
         file ? fileReader.readAsDataURL(file) : this.setState();
     }
 

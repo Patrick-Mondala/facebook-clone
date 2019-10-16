@@ -5,7 +5,15 @@ import ProfilePostIndexItem from './profile_post_index_item';
 
 class ProfilePostIndex extends React.Component {
     componentDidMount() {
-        this.props.fetchTimelinePosts(this.props.user.id);
+        if (this.props.user.id) { 
+            this.props.fetchTimelinePosts(this.props.user.id);
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.user.id && prevProps.user.id !== this.props.user.id) {
+            this.props.fetchTimelinePosts(this.props.user.id);
+        }
     }
 
     //come back and add styling to postindex and postindexitems
@@ -13,10 +21,10 @@ class ProfilePostIndex extends React.Component {
     render() {
         return (
             <div className="profile-timeline-post-index-container">
-                <span className="profile-timeline-post-index-header">Posts</span>
+                {this.props.user.id === this.props.currentUser.id ? <span className="profile-timeline-post-index-header">Posts</span> : null}
                 <div className="profile-timeline-post-index-items-container">
                     <ul className="profile-timeline-post-index-items-list">
-                        {this.props.posts.map(post => <ProfilePostIndexItem key={post.id} post={post}/>)}
+                        {this.props.posts.reverse().map(post => <ProfilePostIndexItem key={`post${post.id}`} author_id={post.author_id} post={post}/>)}
                     </ul>
                 </div>
             </div>

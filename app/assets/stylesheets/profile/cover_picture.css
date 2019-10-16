@@ -29,11 +29,12 @@
 }
 
 .profile-cover-profile-nav {
-    width: 848px;
     height: 44px;
+    width: 848.03px;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-top: none;
     margin-top: 12px;
 }

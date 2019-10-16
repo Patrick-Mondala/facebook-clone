@@ -18,10 +18,16 @@ class ProfileCoverPictureForm extends React.Component {
         let file = e.currentTarget.files[0];
         let fileReader = new FileReader();
 
-        fileReader.onloadend = () => this.setState({
-            cover_picture: file,
-            coverPictureUrl: fileReader.result
-        })
+        fileReader.onloadend = () => {
+            if (file.size < 2500000) {
+                this.setState({
+                    cover_picture: file,
+                    coverPictureUrl: fileReader.result
+                })
+            } else {
+                alert("File too large (must be less than 2.5mb)");
+            }
+        }
 
         file ? fileReader.readAsDataURL(file) : this.setState();
     }

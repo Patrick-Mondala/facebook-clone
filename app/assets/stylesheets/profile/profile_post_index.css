@@ -1,0 +1,77 @@
+.profile-timeline-post-index-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-timeline-post-index-header {
+    color: #606770;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.profile-timeline-post-index-items-container {
+    padding-top: 20px;
+}
+
+.profile-timeline-post-index-item {
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.post-index-item-header {
+    display: flex;
+    padding: 10px;
+}
+
+.profile-post-index-authored-details-container {
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+.profile-post-index-author-item-author-name-container {
+    height: 20px;
+}
+
+.profile-post-index-item-author-name {
+    position: absolute;
+    color: #385898;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-post-index-item-author-name:hover {
+    border-bottom: 1px solid #385898;
+}
+
+.profile-post-index-item-time-created {
+    color: #616770;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.profile-post-index-item-body-container {
+    color: #1c1e21;
+    font-weight: 300;
+    width: 490px;
+    margin: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.profile-post-index-item-body-size-14 {
+    font-size: 14px;
+    line-height: 1.38;
+}
+
+.profile-post-index-item-body-size-24 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.post-index-item-profile-picture:hover {
+    cursor: pointer;
+}
