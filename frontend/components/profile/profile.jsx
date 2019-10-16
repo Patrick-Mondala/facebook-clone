@@ -6,12 +6,12 @@ import Modal from '../modal/modal';
 
 export default class Profile extends React.Component {
     componentDidMount() {
-        this.props.fetchSingleUser(this.props.match.params.userId);
+        this.props.fetchSingleUser(this.props.match.params.userId).fail(() => this.props.history.push("/"));
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId) {
-            this.props.fetchSingleUser(this.props.match.params.userId);//.fail(this.props.history.push(`/users/${this.props.currentUser.id}`)) catch no user found
+            this.props.fetchSingleUser(this.props.match.params.userId).fail(() => this.props.history.push("/"));
         }
     }
 

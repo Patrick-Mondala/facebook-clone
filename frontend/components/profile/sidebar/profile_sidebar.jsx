@@ -4,6 +4,7 @@ import ProfilePhotos from './photos/profile_photos';
 import ProfileFriends from './friends/profile_friends';
 
 export default class ProfileSidebar extends React.Component {
+    //come back with special scroll stuff
     render() {
         return (
             <div className="profile-sidebar">
