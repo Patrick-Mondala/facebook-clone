@@ -19,6 +19,7 @@ class ProfileNav extends React.Component {
         this.toggleDropDown = this.toggleDropDown.bind(this);
         this.state = {dropDown: false};
         this.handleClick = this.handleClick.bind(this);
+        this.dropDownRef = React.createRef();
     }
 
     componentDidMount() {
@@ -30,7 +31,7 @@ class ProfileNav extends React.Component {
     }
 
     handleClick(e) {
-        if (!this.node.contains(e.target)) {
+        if (!this.dropDownRef.current.contains(e.target)) {
             this.setState({dropDown: false});
         }
     }
@@ -55,7 +56,7 @@ class ProfileNav extends React.Component {
                         {this.props.currentUser.first_name}
                     </Link>
                 </li>
-                <li ref={node => this.node = node} id="profile-navbar-settings-container">
+                <li ref={this.dropDownRef} id="profile-navbar-settings-container">
                     <button id="profile-navbar-settings" className={this.state.dropDown ? "navbar-settings-white" : ""} onClick={this.toggleDropDown}>▾</button>
                     {this.state.dropDown ? 
                     <div id="profile-navbar-dropdown-container">

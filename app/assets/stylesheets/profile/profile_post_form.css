@@ -1,0 +1,106 @@
+.profile-post-form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    max-height: 343px;
+    max-width: 515px;
+}
+
+.profile-post-form-header {
+    display: flex;
+    height: 16px;
+    padding: 8px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #dddfe2;
+    border-radius: 2px 2px 0 0;
+    color: #4b4f56;
+    font-weight: bold;
+}
+
+.profile-post-form-header > i {
+    font-size: 14px;
+}
+
+.profile-post-form-header > p {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.profile-post-form-input-container {
+    margin: 10px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.profile-post-form-input {
+    resize: none;
+    padding: 18px 12px 14px 12px;
+    width: 430px;
+    height: 39px;
+}
+
+.profile-post-form-post-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.profile-post-form-post-button {
+    text-align: center;
+    padding: 6px;
+    width: 476px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: #4267b2;
+    border: 1px solid #4267b2;
+}
+
+.profile-post-form-post-button:hover {
+    background-color: #365899;
+    border-color: #365899;
+}
+
+.profile-post-form-post-button:active {
+    transform: scale(.98);
+    background-color: #29487d;
+    border-color: #29487d;
+}
+
+#profile-post-form-post-button-disabled {
+    background-color: #9cb4d8;
+    border-color: #9cb4d8;
+}
+
+.profile-post-form-input-container {
+    display: flex;
+}
+
+.profile-post-form-input-profile-picture-container {
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, .07);
+}
+
+.profile-post-form-input-profile-picture {
+    width: 100%;
+    height: 100%;
+}
+
+#profile-post-form-container-focused {
+    z-index: 20;
+    box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.5);
+}
+
+#profile-post-form-container-focused > .profile-post-form-input-container > textarea {
+    font-size: 24px;
+    font-weight: 300;
+    height: 108px;
+}
