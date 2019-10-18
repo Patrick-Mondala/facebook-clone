@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createFriendship, acceptFriendship, deleteFriendship} from '../../../actions/friendship_actions';
+import { withRouter } from 'react-router-dom';
+import { fetchFriendships, createFriendship, acceptFriendship, deleteFriendship} from '../../../actions/friendship_actions';
 
 class FriendButton extends React.Component {
     constructor(props) {
@@ -8,6 +9,16 @@ class FriendButton extends React.Component {
         this.state = {buttonAction: this.evaluateButtonAction()}
         this.currentFriendship = this.currentFriendship.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
+    }
+
+    componentDidMount() {
+        if (this.props.user.id) this.props.fetchFriendships(this.props.user.id);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.friendships && Object.keys(prevProps.friendships).sort().join(",") != Object.keys(this.props.friendships).sort().join(",")) {
+            this.props.fetchFriendships(this.props.user.id);
+        }
     }
 
     evaluateButtonAction() {
@@ -29,7 +40,7 @@ class FriendButton extends React.Component {
     }
 
     currentFriendship() {
-        return this.props.friendships
+        return Object.values(this.props.friendships)
         .filter(friendship => 
             ((friendship.requester_id === this.props.user.id && friendship.requested_id === this.props.currentUser.id) || 
             (friendship.requested_id === this.props.user.id && friendship.requester_id === this.props.currentUser.id))
@@ -73,16 +84,17 @@ class FriendButton extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    friendships: Object.values(state.entities.friendships)
+    friendships: state.entities.friendships
 })
 
 const mapDispatchToProps = dispatch => ({
+    fetchFriendships: userId => dispatch(fetchFriendships(userId)),
     createFriendship: (requested_id, requester_id) => dispatch(createFriendship(requested_id, requester_id)),
     acceptFriendship: friendshipId => dispatch(acceptFriendship(friendshipId)),
     declineFriendship: friendshipId => dispatch(deleteFriendship(friendshipId))
 })
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(FriendButton);
+)(FriendButton));
