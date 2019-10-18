@@ -139,6 +139,8 @@
 
 .profile-comment-author-profile-picture {
     cursor: pointer;
+    height: 100%;
+    width: 100%;
 }
 
 .profile-comment-author-name {
