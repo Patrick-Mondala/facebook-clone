@@ -64,7 +64,7 @@ class ProfilePostIndexItem extends React.Component {
                 </div>
                 <div className={`profile-post-index-item-body-container profile-post-index-item-body-size-${this.props.post.body.length > 75 ? "14" : "24"}`}>
                     {this.props.post.body}
-                    {!this.props.comments.length > 0 ?
+                    {this.props.comments.length > 0 ?
                     <div className="profile-post-index-item-comment-count">
                         <span>{this.props.comments.length} Comments</span>
                     </div> : null}
