@@ -1,8 +1,6 @@
 class Api::PostsController < ApplicationController
     def newsfeed
-        friendTimelinePosts = User.find(current_user.id).currentFriendTimelines.flatten || []
-        currentUserTimelinePosts = User.find(current_user.id).timeline_posts || []
-        @posts = (friendTimelinePosts + currentUserTimelinePosts)
+        @posts = User.find(current_user.id).newsFeed
         render :index
     end
 
