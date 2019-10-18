@@ -102,6 +102,7 @@
 }
 
 #profile-post-form-container-focused > .profile-post-form-input-container > textarea {
+    transition: ease-out 0.15s;
     font-size: 24px;
     font-weight: 300;
     height: 108px;

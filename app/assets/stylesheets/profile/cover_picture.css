@@ -48,7 +48,17 @@
     font-size: 15px;
 }
 
+@keyframes easeIntoIt {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .profile-cover-picture-edit-button {
+    animation: easeIntoIt 0.7s;
     position: absolute;
     padding: 6px 10px;
     background-color: rgba(0, 0, 0, 0.8);

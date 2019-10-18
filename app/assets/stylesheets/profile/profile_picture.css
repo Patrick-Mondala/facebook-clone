@@ -24,7 +24,18 @@
     font-size: 14px;
 }
 
+@keyframes easeIntoIt {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .profile-cover-profile-picture-edit-button {
+    animation: easeIntoIt 0.5s;
+    transition: ease-out 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
