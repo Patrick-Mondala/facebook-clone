@@ -37,6 +37,7 @@ class PostCommentForm extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <textarea 
+                        id={`post-comment-form-for-${this.state.post_id}`}
                         className="post-comment-form-input"
                         onChange={this.handleChange}
                         onKeyDown={e => {

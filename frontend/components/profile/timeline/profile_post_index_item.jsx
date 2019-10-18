@@ -71,7 +71,7 @@ class ProfilePostIndexItem extends React.Component {
                 </div>
                 <div className="profile-post-index-option-bar">
                     <button><i className="far fa-thumbs-up"></i>Like</button>
-                    <button><i className="far fa-comment-alt"></i>Comment</button>
+                    <button onClick={() => document.getElementById(`post-comment-form-for-${this.props.post.id}`).focus()}><i className="far fa-comment-alt"></i>Comment</button>
                 </div>
                 <div className="profile-post-index-comment-section">
                     <PostComments comments={this.props.comments} postId={this.props.post.id} />
