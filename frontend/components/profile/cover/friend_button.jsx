@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchFriendships, createFriendship, acceptFriendship, deleteFriendship} from '../../../actions/friendship_actions';
 
 class FriendButton extends React.Component {
@@ -23,8 +24,8 @@ class FriendButton extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if ((prevProps.entities.friendships && this.props.entities.friendships) && 
-        !_.isEqual(prevProps.entities.friendships, this.props.entities.friendships)) {
+        if ((prevProps.user.id !== this.props.user.id) || ((prevProps.entities.friendships && this.props.entities.friendships) && 
+        !_.isEqual(prevProps.entities.friendships, this.props.entities.friendships))) {
             this.props.fetchFriendships(this.props.user.id)
                 .always(() => this.currentFriendship());
         }
@@ -95,8 +96,9 @@ class FriendButton extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
+    user: state.entities.users[ownProps.match.params.userId] || {},
     entities: state.entities
 })
 
@@ -107,7 +109,7 @@ const mapDispatchToProps = dispatch => ({
     declineFriendship: friendshipId => dispatch(deleteFriendship(friendshipId))
 })
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(FriendButton);
+)(FriendButton));
