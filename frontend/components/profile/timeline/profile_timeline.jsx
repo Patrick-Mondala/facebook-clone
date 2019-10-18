@@ -4,7 +4,6 @@ import ProfilePostIndex from './profile_post_index';
 
 export default class ProfileTimeline extends React.Component {
     render() {
-        console.log(this.props.friendships);
         return (
             <div className="profile-timeline">
                 <ProfilePostForm user={this.props.user} currentUser={this.props.currentUser} />

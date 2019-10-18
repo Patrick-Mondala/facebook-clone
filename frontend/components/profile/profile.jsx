@@ -19,7 +19,6 @@ class Profile extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div className="profile-container">
                 <Modal user={this.props.user} currentUser={this.props.currentUser} />
