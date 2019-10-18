@@ -6,12 +6,12 @@ export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const receiveAllUsers = users => ({
     type: RECEIVE_ALL_USERS,
     users
-})
+});
 
 export const receiveSingleUser = user => ({
     type: RECEIVE_SINGLE_USER,
     user
-})
+});
 
 export const fetchSingleUser = userId => dispatch => {
     return ApiUtil.fetchUser(userId).then(user => dispatch(receiveSingleUser(user)));

@@ -1,0 +1,97 @@
+.profile-nav-friend-requests-list {
+    height: 500px;
+    overflow: auto;
+}
+
+.profile-nav-friend-requests-list > li {
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    width: 406px;
+    padding: 6px 12px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.profile-nav-friend-requester-details {
+    display: flex;
+}
+
+.profile-nav-friend-requests-item-requester-picture-container {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.profile-nav-friend-requests-item-requester-picture {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.profile-nav-friend-request-item-name-container {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.profile-nav-friend-request-item-name {
+    font-size: 12px;
+    color: #0d1424;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.profile-nav-friend-request-buttons-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.profile-nav-friend-request-buttons-container > div > button {
+    padding: 0 8px;
+    border: 1px solid;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.profile-nav-friend-request-accept-button {
+    background-color: #4267b2;
+    border-color: #4267b2 !important;
+    color: white;
+}
+
+.profile-nav-friend-request-accept-button:hover {
+    background-color: #365899;
+    border-color: #365899;
+}
+
+.profile-nav-friend-request-accept-button:active {
+    transform: scale(.98);
+    background-color: #29487d;
+    border-color: #29487d;
+}
+.profile-nav-friend-request-delete-button-container {
+    margin-left: 4px;
+}
+
+.profile-nav-friend-request-delete-button {
+    background-color: #f5f6f7;
+    border-color: #ccd0d5 !important;
+    color: #4b4f56;
+}
+
+.profile-nav-friend-request-delete-button:hover {
+    background-color: #ebedf0;
+}
+
+.profile-nav-friend-request-delete-button:active {
+    transform: scale(.98);
+    background-color: #dddfe2;
+    border-color: #bec3c9;
+}

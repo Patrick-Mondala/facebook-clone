@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
+import * as FriendActions from './actions/friendship_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -22,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
+    window.createFriendship = FriendActions.createFriendship;
+    window.acceptFriendship = FriendActions.acceptFriendship;
+    window.deleteFriendship = FriendActions.deleteFriendship;
     //TESTING END
 
     ReactDOM.render(<Root store={store} />, root);

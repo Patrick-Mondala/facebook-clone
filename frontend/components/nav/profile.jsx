@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
+import FriendRequests from './friends/friends';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
@@ -56,6 +57,7 @@ class ProfileNav extends React.Component {
                         {this.props.currentUser.first_name}
                     </Link>
                 </li>
+                <FriendRequests />
                 <li ref={this.dropDownRef} id="profile-navbar-settings-container">
                     <button id="profile-navbar-settings" className={this.state.dropDown ? "navbar-settings-white" : ""} onClick={this.toggleDropDown}>▾</button>
                     {this.state.dropDown ? 

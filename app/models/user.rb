@@ -19,6 +19,14 @@ class User < ApplicationRecord
     foreign_key: :timeline_owner_id,
     class_name: :Post
 
+  has_many :sent_friend_requests,
+    foreign_key: :requester_id,
+    class_name: :Friendship
+
+  has_many :received_friend_requests,
+    foreign_key: :requested_id,
+    class_name: :Friendship
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user
