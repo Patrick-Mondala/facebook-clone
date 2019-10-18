@@ -24,7 +24,7 @@ class ProfilePostIndex extends React.Component {
                 {this.props.user.id === this.props.currentUser.id ? <span className="profile-timeline-post-index-header">Posts</span> : null}
                 <div className="profile-timeline-post-index-items-container">
                     <ul className="profile-timeline-post-index-items-list">
-                        {this.props.posts.reverse().map(post => <ProfilePostIndexItem key={`post${post.id}`} timeline_owner_id={post.timeline_owner_id} author_id={post.author_id} post={post}/>)}
+                        {this.props.posts.sort().reverse().map(post => <ProfilePostIndexItem key={`post${post.id}`} timeline_owner_id={post.timeline_owner_id} author_id={post.author_id} post={post}/>)}
                     </ul>
                 </div>
             </div>
