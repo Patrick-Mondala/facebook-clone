@@ -1,33 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { fetchFriendships, createFriendship, acceptFriendship, deleteFriendship} from '../../../actions/friendship_actions';
+import { isEqual } from 'lodash';
 
 class FriendButton extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {buttonAction: this.evaluateButtonAction()}
+        this.state = {
+            buttonAction: "default",
+            currentFriendship: null
+        }
         this.currentFriendship = this.currentFriendship.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
+        this.evaluateButtonAction = this.evaluateButtonAction.bind(this);
     }
 
     componentDidMount() {
-        if (this.props.user.id) this.props.fetchFriendships(this.props.user.id);
+        if (this.props.user.id) {
+            this.props.fetchFriendships(this.props.user.id)
+                .always(() => this.currentFriendship());
+        }
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.friendships && Object.keys(prevProps.friendships).sort().join(",") != Object.keys(this.props.friendships).sort().join(",")) {
-            this.props.fetchFriendships(this.props.user.id);
+        if ((prevProps.entities.friendships && this.props.entities.friendships) && 
+        !_.isEqual(prevProps.entities.friendships, this.props.entities.friendships)) {
+            this.props.fetchFriendships(this.props.user.id)
+                .always(() => this.currentFriendship());
         }
     }
 
     evaluateButtonAction() {
         let buttonAction;
-        if (this.currentFriendship()) {
-            if (this.currentFriendship().accepted) {
+        if (this.state.currentFriendship) {
+            if (this.state.currentFriendship.accepted) {
                 buttonAction = "Remove Friend";
             } else {
-                if (this.currentFriendship().requested_id === this.props.currentUser.id) {
+                if (this.state.currentFriendship.requested_id === this.props.currentUser.id) {
                     buttonAction = "Accept Friend Request";
                 } else {
                     buttonAction = "Cancel Friend Request";
@@ -40,30 +49,33 @@ class FriendButton extends React.Component {
     }
 
     currentFriendship() {
-        return Object.values(this.props.friendships)
+        this.setState({currentFriendship: Object.values(this.props.entities.friendships)
         .filter(friendship => 
             ((friendship.requester_id === this.props.user.id && friendship.requested_id === this.props.currentUser.id) || 
             (friendship.requested_id === this.props.user.id && friendship.requester_id === this.props.currentUser.id))
-        )[0];
+        )[0]
+        }, () => this.setState({
+            buttonAction: this.evaluateButtonAction()
+        }))
     }
 
     buttonAction() {
         switch (this.state.buttonAction) {
             case "Add Friend":
                 return () => {
-                    this.setState({buttonAction: "Cancel Friend Request"}, () => this.props.createFriendship(this.props.user.id, this.props.currentUser.id))
+                    this.props.createFriendship(this.props.user.id, this.props.currentUser.id);
                 }
             case "Remove Friend":
                 return () => {
-                    this.setState({buttonAction: "Add Friend"}, () => this.props.declineFriendship(this.currentFriendship().id));
+                    this.props.declineFriendship(this.state.currentFriendship.id);
                 }
             case "Accept Friend Request":
                 return () => {
-                    this.setState({buttonAction: "Remove Friend"}, () => this.props.acceptFriendship(this.currentFriendship().id));
+                    this.props.acceptFriendship(this.state.currentFriendship.id);
                 }
             case "Cancel Friend Request":
                 return () => {
-                    this.setState({buttonAction: "Add Friend"}, () => this.props.declineFriendship(this.currentFriendship().id));
+                    this.props.declineFriendship(this.state.currentFriendship.id);
                 }
             default:
                 break;
@@ -84,7 +96,8 @@ class FriendButton extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    friendships: state.entities.friendships
+    currentUser: state.entities.users[state.session.id],
+    entities: state.entities
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -94,7 +107,7 @@ const mapDispatchToProps = dispatch => ({
     declineFriendship: friendshipId => dispatch(deleteFriendship(friendshipId))
 })
 
-export default withRouter(connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(FriendButton));
+)(FriendButton);
