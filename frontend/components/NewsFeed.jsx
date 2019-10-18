@@ -16,7 +16,7 @@ class NewsFeed extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (!_.isEqual(prevProps.posts, this.props.posts)) {
-            this.props.fetchNewsfeed();
+            this.props.fetchNewsfeed().then(() => this.setState({posts: this.props.posts}));
         }
     }
 
