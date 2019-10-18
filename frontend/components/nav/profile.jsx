@@ -49,7 +49,7 @@ class ProfileNav extends React.Component {
                     <Link to="/">
                         <img
                             className="bacefook-icon"
-                                src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--86486ba042f9292083fa74b1bef345c872b2604e/bacefook%20icon.png" />
+                                src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0ef3c57cfb4011ed647af46ada06fa11cc21b38e/bacefook%20icon.png" />
                     </Link>
                 </li>
                 <li className="profile-navbar-profile-link">
