@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchNewsfeed } from '../actions/post_actions';
+import { fetchFriendships } from '../actions/friendship_actions';
 import ProfilePostIndexItem from '../components/profile/timeline/profile_post_index_item';
 import ProfilePostForm from '../components/profile/timeline/profile_post_form';
 
@@ -11,11 +12,15 @@ class NewsFeed extends React.Component {
 
     componentDidMount() {
         this.props.fetchNewsfeed();
+        this.props.fetchFriendships(this.props.currentUser.id)
     }
 
     componentDidUpdate(prevProps) {
         if (!_.isEqual(prevProps.posts, this.props.posts)) {
             this.props.fetchNewsfeed();
+        }
+        if (!_.isEqual(prevProps.friendships, this.props.friendships)) {
+            this.props.fetchFriendships(this.props.currentUser.id);
         }
     }
 
@@ -35,11 +40,13 @@ class NewsFeed extends React.Component {
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id] || {},
+    friendships: Object.values(state.entities.friendships) || {},
     posts: Object.values(state.entities.posts) || {}
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchNewsfeed: () => dispatch(fetchNewsfeed())
+    fetchNewsfeed: () => dispatch(fetchNewsfeed()),
+    fetchFriendships: userId => dispatch(fetchFriendships(userId))
 })
 
 export default connect(
