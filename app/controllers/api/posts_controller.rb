@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
     def newsfeed
-        friendTimelinePosts = User.find(current_user.id).currentFriendTimelines.inject {|acc, timeline| acc + timeline} || []
+        friendTimelinePosts = User.find(current_user.id).currentFriendTimelines.flatten || []
         currentUserTimelinePosts = User.find(current_user.id).timeline_posts || []
         @posts = (friendTimelinePosts + currentUserTimelinePosts)
         render :index
