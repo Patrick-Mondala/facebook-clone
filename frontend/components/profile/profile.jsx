@@ -19,6 +19,7 @@ class Profile extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className="profile-container">
                 <Modal user={this.props.user} currentUser={this.props.currentUser} />
@@ -26,7 +27,7 @@ class Profile extends React.Component {
                 {this.props.user.id !== this.props.currentUser.id ? <FriendButton user={this.props.user} /> : null}
                 <div className="profile-content-under-cover">
                     <ProfileSidebar user={this.props.user} currentUser={this.props.currentUser} />
-                    <ProfileTimeline user={this.props.user} currentUser={this.props.currentUser} />
+                    <ProfileTimeline user={this.props.user} currentUser={this.props.currentUser} friendships={this.props.entities.friendships} />
                 </div>
             </div>
         )
@@ -36,7 +37,10 @@ class Profile extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     let defaultUser = {};
     let user = state.entities.users[ownProps.match.params.userId] || defaultUser;
-    return { user }
+    return { 
+        user,
+        entities: state.entities
+    }
 }
 
 const mapDispatchToProps = dispatch => ({

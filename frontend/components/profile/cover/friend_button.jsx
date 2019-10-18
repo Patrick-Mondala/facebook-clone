@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchFriendships, createFriendship, acceptFriendship, deleteFriendship} from '../../../actions/friendship_actions';
-import { isEqual } from 'lodash';
 
 class FriendButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             buttonAction: "default",
-            currentFriendship: null
+            currentFriendship: Object.values(this.props.entities.friendships)
+                .filter(friendship =>
+                    ((friendship.requester_id === this.props.user.id && friendship.requested_id === this.props.currentUser.id) ||
+                        (friendship.requested_id === this.props.user.id && friendship.requester_id === this.props.currentUser.id))
+                )[0]
         }
         this.currentFriendship = this.currentFriendship.bind(this);
         this.buttonAction = this.buttonAction.bind(this);
@@ -16,10 +19,7 @@ class FriendButton extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.user.id) {
-            this.props.fetchFriendships(this.props.user.id)
-                .always(() => this.currentFriendship());
-        }
+        this.setState({buttonAction: this.evaluateButtonAction()});
     }
 
     componentDidUpdate(prevProps) {
