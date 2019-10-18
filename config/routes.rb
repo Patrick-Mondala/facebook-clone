@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resources :friendships, only: [:show, :create, :index]
     end
     resources :posts, only: [:update, :show, :destroy] do
+      collection do
+        get :newsfeed
+      end
       resources :comments, only: [:create, :index]
     end
     resources :comments, only: [:update, :destroy]

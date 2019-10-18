@@ -74,3 +74,8 @@ export const deleteFriendship = friendshipId => $.ajax({
     method: 'DELETE',
     url: `api/friendships/${friendshipId}`
 })
+
+export const fetchNewsfeed = () => $.ajax({
+    method: 'GET',
+    url: 'api/posts/newsfeed'
+})

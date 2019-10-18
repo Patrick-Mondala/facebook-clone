@@ -92,3 +92,18 @@ li.profile-navbar-profile-link > a:hover {
     width: 100%;
     height: 100%;
 }
+
+.bacefook-icon-container {
+    height: 26px;
+    width: 26px;
+}
+
+.bacefook-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+}
+
+.bacefook-icon:hover {
+    border: 1px solid #29487d;
+}

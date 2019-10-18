@@ -1,0 +1,8 @@
+.newsfeed-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsfeed-list {
+    margin-top: 10px;
+}

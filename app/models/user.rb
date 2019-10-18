@@ -27,6 +27,17 @@ class User < ApplicationRecord
     foreign_key: :requested_id,
     class_name: :Friendship
 
+  def currentFriendTimelines
+    Friendship.where("(requested_id = ? OR requester_id = ?) AND accepted IS true", self.id, self.id)
+    .map {|friendship| 
+      if friendship.requested_id == :id
+        friendship.requester.timeline_posts
+      else
+        friendship.requested.timeline_posts
+      end
+    }
+  end
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

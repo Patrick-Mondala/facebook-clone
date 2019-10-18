@@ -88,6 +88,7 @@
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, .07);
+    margin-top: 7px;
 }
 
 .profile-post-form-input-profile-picture {

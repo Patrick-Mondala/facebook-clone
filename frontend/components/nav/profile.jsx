@@ -45,6 +45,13 @@ class ProfileNav extends React.Component {
         return (
         <div className="profile-navbar-container">
             <ul className="profile-navbar">
+                <li className="bacefook-icon-container">
+                    <Link to="/">
+                        <img
+                            className="bacefook-icon"
+                            src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--294eb2f54b1fa98055d7b36dc704c59b018d09b6/bacefook%20icon.png" />
+                    </Link>
+                </li>
                 <li className="profile-navbar-profile-link">
                     <Link to={`/users/${this.props.currentUser.id}`}>
                         <div className="profile-navbar-profile-picture-container">

@@ -2,6 +2,16 @@ import * as APIUtil from '../util/api_util';
 
 export const RECEIVE_SINGLE_POST = 'RECEIVE_SINGLE_POST';
 export const RECEIVE_TIMELINE_POSTS = 'RECEIVE_TIMELINE_POSTS';
+export const RECEIVE_NEWSFEED = 'RECEIVE_NEWSFEED';
+
+export const receiveNewsfeed = posts => ({
+    type: RECEIVE_NEWSFEED,
+    posts
+})
+
+export const fetchNewsfeed = () => dispatch => {
+    return APIUtil.fetchNewsfeed().then(posts => dispatch(receiveNewsfeed(posts)));
+}
 
 export const receiveTimelinePosts = posts => ({
     type: RECEIVE_TIMELINE_POSTS,
