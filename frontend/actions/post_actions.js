@@ -9,7 +9,7 @@ export const receiveTimelinePosts = posts => ({
 });
 
 export const fetchTimelinePosts = userId => dispatch => {
-    return APIUtil.fetchTimelinePosts(userId).then(posts => dispatch(receiveTimelinePosts(posts)))
+    return APIUtil.fetchTimelinePosts(userId).then(posts => dispatch(receiveTimelinePosts(posts)));
 }
 
 export const receiveSinglePost = post => ({
@@ -18,5 +18,9 @@ export const receiveSinglePost = post => ({
 });
 
 export const createPost = (userId, formData) => dispatch => {
-    return APIUtil.createPost(userId, formData).then(post => dispatch(receiveSinglePost(post)))
+    return APIUtil.createPost(userId, formData).then(post => dispatch(receiveSinglePost(post)));
+}
+
+export const fetchPost = postId => dispatch => {
+    return APIUtil.fetchPost(postId).then(post => dispatch(receiveSinglePost(post)));
 }

@@ -2,12 +2,31 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleUser } from '../../../actions/user_actions';
 import { Link, withRouter } from 'react-router-dom';
+import { fetchPost } from '../../../actions/post_actions';
+import { fetchComments } from '../../../actions/comment_actions';
+import PostComments from './comments/post_comments';
+import PostCommentForm from './comments/post_comment_form';
 
 //eventually map fetchPostComments to props
 class ProfilePostIndexItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {post: this.props.post}
+    }
+
     componentDidMount() {
         if (this.props.author && this.props.author.id !== this.props.post.author_id) {
             this.props.fetchUser(this.props.post.author_id);
+        }
+        this.props.fetchComments(this.props.post.id)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.state.post && !_.isEqual(prevProps.post, this.props.post)) {
+            this.props.fetchPost(this.state.postId);
+        }
+        if (this.state.comments && !_.isEqual(prevProps.comments, this.props.comments)) {
+            this.props.fetchComments(this.props.post.id);
         }
     }
 
@@ -26,26 +45,37 @@ class ProfilePostIndexItem extends React.Component {
                     </div>
                     <div className="profile-post-index-authored-details-container">
                         <div className="profile-post-index-author-item-author-name-container">
-                            <button 
-                                onClick={() => this.props.history.push(`/users/${this.props.author.id}`)}
+                            <div className="profile-post-index-name-containers">
+                              <button 
+                                onClick={() => this.props.history.push(`/users/${this.props.author_id}`)}
                                 className="profile-post-index-item-author-name"
                             >{this.props.author.first_name} {this.props.author.last_name}
                             </button>
+                            {this.props.author_id !== this.props.timeline_owner_id ?
+                            <button
+                                onClick={() => this.props.history.push(`/users/${this.props.timeline_owner_id}`)}
+                                className="profile-post-index-item-timeline-owner-name-button"
+                                    ><p className="profile-post-index-item-right-arrow">></p><p className="profile-post-index-item-timeline-owner-name">{this.props.timeline_owner.first_name} {this.props.timeline_owner.last_name}</p>
+                            </button> : null }  
+                            </div>
                         </div>
                         <p className="profile-post-index-item-time-created">{this.props.post.createdAt.date} at {this.props.post.createdAt.time}</p>
                     </div>
                 </div>
                 <div className={`profile-post-index-item-body-container profile-post-index-item-body-size-${this.props.post.body.length > 75 ? "14" : "24"}`}>
                     {this.props.post.body}
-                    <div className="hidden">
-                        placeholder for comments.length Comments
-                    </div>
+                    {!this.props.comments.length > 0 ?
+                    <div className="profile-post-index-item-comment-count">
+                        <span>{this.props.comments.length} Comments</span>
+                    </div> : null}
                 </div>
-                <div className="hidden">
-                    placeholder for Like Comment Share
+                <div className="profile-post-index-option-bar">
+                    <button><i className="far fa-thumbs-up"></i>Like</button>
+                    <button><i className="far fa-comment-alt"></i>Comment</button>
                 </div>
-                <div className="hidden">
-                    placeholder for CommentForm and CommentIndex
+                <div className="profile-post-index-comment-section">
+                    <PostComments comments={this.props.comments} postId={this.props.post.id} />
+                    <PostCommentForm postId={this.props.post.id} />
                 </div>
             </li>
         )
@@ -53,11 +83,17 @@ class ProfilePostIndexItem extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    author: state.entities.users[ownProps.author_id] || {}
+    currentUser: state.entities.users[state.session.id] || {},
+    post: state.entities.posts[ownProps.post.id] || {},
+    author: state.entities.users[ownProps.author_id] || {},
+    timeline_owner: state.entities.users[ownProps.timeline_owner_id] || {},
+    comments: Object.values(state.entities.comments).filter(comment => comment.post_id === ownProps.post.id) || {}
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: userId => dispatch(fetchSingleUser(userId))
+    fetchPost: postId => dispatch(fetchPost(postId)),
+    fetchUser: userId => dispatch(fetchSingleUser(userId)),
+    fetchComments: postId => dispatch(fetchComments(postId))
 })
 
 export default withRouter(connect(

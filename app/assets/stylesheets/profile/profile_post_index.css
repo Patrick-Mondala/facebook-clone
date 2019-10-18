@@ -35,12 +35,35 @@
     height: 20px;
 }
 
+.profile-post-index-name-containers {
+    display: flex;
+    align-items: flex-start;
+}
+
 .profile-post-index-item-author-name {
-    position: absolute;
     color: #385898;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+.profile-post-index-item-right-arrow {
+    width: 10px;
+    margin-right: 5px;
+    color: gray;
+}
+
+.profile-post-index-item-timeline-owner-name-button {
+    display: flex;
+    color: #385898;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.profile-post-index-item-timeline-owner-name:hover {
+    border-bottom: 1px solid #385898;
 }
 
 .profile-post-index-item-author-name:hover {
@@ -58,6 +81,7 @@
     font-weight: 300;
     width: 490px;
     margin: 12px;
+    margin-bottom: 0;
     padding-bottom: 10px;
     border-bottom: 1px solid #dddfe2;
 }
@@ -75,4 +99,65 @@
 
 .post-index-item-profile-picture:hover {
     cursor: pointer;
+}
+
+.profile-post-index-item-comment-count {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    color: #606770;
+}
+
+.profile-post-index-option-bar {
+    display: flex;
+    justify-content: center;
+    color: #606770;
+    padding: 4px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.profile-post-index-option-bar > button {
+    padding: 7px 85px;
+    border-radius: 3px;
+}
+
+.profile-post-index-option-bar > button > i {
+    margin-right: 5px;
+}
+
+.profile-post-index-option-bar > button:hover {
+    background-color: rgba(0, 0, 0, .05);
+    
+}
+
+.profile-index-comment-list-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    font-size: 13px;
+}
+
+.profile-comment-author-profile-picture {
+    cursor: pointer;
+}
+
+.profile-comment-author-name {
+    color: #385898;
+    cursor: pointer;
+    line-height: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.profile-comment-author-name:hover {
+    border-bottom: 1px solid #385898;
+}
+
+.profile-comment-content-container {
+    margin-left: 5px;
+    padding: 8px 10px;
+    background-color: #f2f3f5;
+    border-radius: 50px;
+    max-width: 430px;
 }
