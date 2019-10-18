@@ -77,7 +77,9 @@ class ProfilePostForm extends React.Component {
                         className="profile-post-form-input"
                         cols="32"
                         rows="10"
-                        placeholder={`What's on your mind, ${this.props.currentUser.first_name}?`}>
+                        placeholder={this.props.user.id === this.props.currentUser.id ? 
+                            `What's on your mind, ${this.props.currentUser.first_name}?`
+                        : `Write something to ${this.props.user.first_name}...`}>
                     </textarea>
                 </div>
                     {this.state.focused ?
