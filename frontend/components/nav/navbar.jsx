@@ -14,7 +14,7 @@ const NavBar = props => (
     <nav className="navbar">
         {props.currentUser ? <ProfileNav /> : <AuthRoute path="/" component={Login} />}
     </nav>
-)
+);
 
 export default connect(
     mapStateToProps

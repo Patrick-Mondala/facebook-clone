@@ -45,35 +45,38 @@ class ProfileNav extends React.Component {
         return (
         <div className="profile-navbar-container">
             <ul className="profile-navbar">
-                <li className="bacefook-icon-container">
-                    <Link to="/">
-                        <img
-                            className="bacefook-icon"
-                            src="/bacefooknewsfeedicon.png" />
-                    </Link>
-                </li>
-                <li className="profile-navbar-profile-link">
-                    <Link to={`/users/${this.props.currentUser.id}`}>
-                        <div className="profile-navbar-profile-picture-container">
-                            <img className="profile-navbar-profile-picture"
-                                src={this.props.currentUser.profile_picture ? 
-                                    this.props.currentUser.profile_picture 
-                                    : "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"} 
-                            />
-                        </div>
-                        {this.props.currentUser.first_name}
-                    </Link>
-                </li>
-                <FriendRequests />
-                <li ref={this.dropDownRef} id="profile-navbar-settings-container">
-                    <button id="profile-navbar-settings" className={this.state.dropDown ? "navbar-settings-white" : ""} onClick={this.toggleDropDown}>▾</button>
-                    {this.state.dropDown ? 
-                    <div id="profile-navbar-dropdown-container">
-                        <ul id="profile-navbar-dropdown">
-                            <li><button onClick={this.props.logout}>Log Out</button></li>
-                        </ul>
-                    </div> : null}
-                </li>
+              <li className="bacefook-icon-container">
+                  <Link to="/">
+                      <img
+                          className="bacefook-icon"
+                          src="/bacefooknewsfeedicon.png" />
+                  </Link>
+              </li>
+              <li className="github-link-container">
+                <a href="https://github.com/Patrick-Mondala/facebook-clone"><i className="fab fa-github-square"></i></a>
+              </li>
+              <li className="profile-navbar-profile-link">
+                  <Link to={`/users/${this.props.currentUser.id}`}>
+                      <div className="profile-navbar-profile-picture-container">
+                          <img className="profile-navbar-profile-picture"
+                              src={this.props.currentUser.profile_picture ? 
+                                  this.props.currentUser.profile_picture 
+                                  : "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"} 
+                          />
+                      </div>
+                      {this.props.currentUser.first_name}
+                  </Link>
+              </li>
+              <FriendRequests />
+              <li ref={this.dropDownRef} id="profile-navbar-settings-container">
+                  <button id="profile-navbar-settings" className={this.state.dropDown ? "navbar-settings-white" : ""} onClick={this.toggleDropDown}>▾</button>
+                  {this.state.dropDown ? 
+                  <div id="profile-navbar-dropdown-container">
+                      <ul id="profile-navbar-dropdown">
+                          <li><button onClick={this.props.logout}>Log Out</button></li>
+                      </ul>
+                  </div> : null}
+              </li>
             </ul>
         </div>
         )
