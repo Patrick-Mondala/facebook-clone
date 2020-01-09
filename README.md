@@ -24,16 +24,16 @@ Bacefook is a social media platform that allows people to connect with anyone an
 
 Users can setup their profiles with a cover picture, profile picture, and make posts on their timeline.
 
-![Bacefook Demo Profile Page](./screenshots/splash.png)
+![Bacefook Demo Profile Page](./screenshots/profile.png)
 
 ## Newsfeed
 
 The newsfeed holds all the latest posts of friends
 
-![Bacefook Demo Newsfeed](./screenshots/splash.png)
+![Bacefook Demo Newsfeed](./screenshots/newsfeed.png)
 
 ## Signup Assistance
 
 The sign up form provides tool-tip assistance to bring attention to fields that need to be corrected in order to sign up.
 
-![Bacefook Signup](./screenshots/splash.png)
+![Bacefook Signup](./screenshots/signup_form.png)
