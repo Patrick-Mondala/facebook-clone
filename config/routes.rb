@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :friendships, only: [:update, :destroy]
     resource :session, only: [:create, :destroy, :show]
   end
+
+  get :search, controller: :main
   
   root "static_pages#root"
 end
