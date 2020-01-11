@@ -65,6 +65,11 @@ class ProfilePostIndexItem extends React.Component {
                 </div>
                 <div className={`profile-post-index-item-body-container profile-post-index-item-body-size-${this.props.post.body.length > 75 ? "14" : "24"}`}>
                     {this.props.post.body}
+                    {this.props.post.photo ? 
+                      <div className="profile-post-index-item-photo-container">
+                        <img src={this.props.post.photo}></img>
+                      </div>
+                    : null}
                     <div className="profile-post-index-item-count-container">
                     {this.props.likes.length > 0 ?
                       <div className="profile-post-index-item-like-count">

@@ -4,7 +4,7 @@
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 3px;
-    max-height: 343px;
+    max-height: 370px;
     max-width: 515px;
 }
 
@@ -32,6 +32,10 @@
 .profile-post-form-input-container {
     margin: 10px;
     border-bottom: 1px solid #dddfe2;
+}
+
+.profile-post-form-top-input-container {
+  display: flex;
 }
 
 .profile-post-form-input {
@@ -77,6 +81,7 @@
 
 .profile-post-form-input-container {
     display: flex;
+    flex-direction: column;
 }
 
 .profile-post-form-input-profile-picture-container {
@@ -101,9 +106,44 @@
     box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.5);
 }
 
-#profile-post-form-container-focused > .profile-post-form-input-container > textarea {
+#profile-post-form-container-focused > .profile-post-form-input-container > .profile-post-form-top-input-container > textarea {
     transition: ease-out 0.15s;
     font-size: 24px;
     font-weight: 300;
     height: 108px;
+}
+
+.profile-post-form-photo-preview > img {
+  max-height: 100px;
+  max-width: 100px;
+  padding-bottom: 5px;
+}
+
+.profile-post-form-photo-label-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 7px 12px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: #f5f6f7;
+  font-size: 12px;
+  font-weight: 600;
+  color: #42464b;
+}
+
+.profile-post-form-photo-label-container:hover {
+  background-color: #ebedf0;
+}
+
+.profile-post-form-photo-label-container > i {
+  color: #9fcd6a;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.profile-post-index-item-photo-container {
+  margin-bottom: 5px;
 }
