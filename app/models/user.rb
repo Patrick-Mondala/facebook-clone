@@ -27,6 +27,10 @@ class User < ApplicationRecord
     foreign_key: :requested_id,
     class_name: :Friendship
 
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
+  has_many :liked_comments, through: :likes, source: :likeable, source_type: "Comment"
+
   def newsFeed
     Friendship.where("accepted = true AND (requested_id = ? OR requester_id = ?)", self.id, self.id)
     .map {|friendship|
