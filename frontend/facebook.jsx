@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     //TESTING START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    
+    window.createLike = ApiUtil.createLike;
+    window.deleteLike = ApiUtil.deleteLike;
     //TESTING END
 
     ReactDOM.render(<Root store={store} />, root);

@@ -4,6 +4,7 @@ import { fetchSingleUser } from '../../../actions/user_actions';
 import { Link, withRouter } from 'react-router-dom';
 import { fetchPost } from '../../../actions/post_actions';
 import { fetchComments } from '../../../actions/comment_actions';
+import { createLike, deleteLike } from "../../../actions/like_actions";
 import PostComments from './comments/post_comments';
 import PostCommentForm from './comments/post_comment_form';
 
@@ -64,13 +65,24 @@ class ProfilePostIndexItem extends React.Component {
                 </div>
                 <div className={`profile-post-index-item-body-container profile-post-index-item-body-size-${this.props.post.body.length > 75 ? "14" : "24"}`}>
                     {this.props.post.body}
+                    <div className="profile-post-index-item-count-container">
+                    {this.props.likes.length > 0 ?
+                      <div className="profile-post-index-item-like-count">
+                    <span><span className="like-thumb"><i className="fas fa-thumbs-up"></i></span>{this.props.likes.length}</span>
+                      </div> : null}
                     {this.props.comments.length > 0 ?
-                    <div className="profile-post-index-item-comment-count">
-                        <span>{this.props.comments.length} Comments</span>
-                    </div> : null}
+                      <div className="profile-post-index-item-comment-count">
+                          <span>{this.props.comments.length} Comments</span>
+                      </div> : null}
+                    </div>
                 </div>
                 <div className="profile-post-index-option-bar">
-                    <button><i className="far fa-thumbs-up"></i>Like</button>
+                    {this.props.likes.filter(like => like.user_id === this.props.currentUser.id).length > 0 ?
+                    <button 
+                      className="liked"
+                      onClick={() => this.props.deleteLike(this.props.likes.filter(like => like.user_id === this.props.currentUser.id)[0].id)}
+                    ><i className="fas fa-thumbs-up"></i>Like</button> 
+                : <button onClick={() => this.props.createLike({ user_id: this.props.currentUser.id, likeable_id: this.props.post.id, likeable_type: "Post" })}><i className="far fa-thumbs-up"></i>Like</button>}
                     <button onClick={() => document.getElementById(`post-comment-form-for-${this.props.post.id}`).focus()}><i className="far fa-comment-alt"></i>Comment</button>
                 </div>
                 <div className="profile-post-index-comment-section">
@@ -87,14 +99,17 @@ const mapStateToProps = (state, ownProps) => ({
     post: state.entities.posts[ownProps.post.id] || {},
     author: state.entities.users[ownProps.author_id] || {},
     timeline_owner: state.entities.users[ownProps.timeline_owner_id] || {},
-    comments: Object.values(state.entities.comments).filter(comment => comment.post_id === ownProps.post.id) || {}
-})
+    comments: Object.values(state.entities.comments).filter(comment => comment.post_id === ownProps.post.id) || {},
+    likes: Object.values(state.entities.likes).filter(like => like.likeable_id === ownProps.post.id) || {}
+});
 
 const mapDispatchToProps = dispatch => ({
     fetchPost: postId => dispatch(fetchPost(postId)),
     fetchUser: userId => dispatch(fetchSingleUser(userId)),
-    fetchComments: postId => dispatch(fetchComments(postId))
-})
+    fetchComments: postId => dispatch(fetchComments(postId)),
+    createLike: like => dispatch(createLike(like)),
+    deleteLike: likeId => dispatch(deleteLike(likeId))
+});
 
 export default withRouter(connect(
     mapStateToProps,

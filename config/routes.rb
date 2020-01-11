@@ -15,7 +15,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:update, :destroy]
     resources :friendships, only: [:update, :destroy]
     resource :session, only: [:create, :destroy, :show]
+    resources :likes, only: [:create, :destroy]
   end
+
+  get :search, controller: :main
   
   root "static_pages#root"
 end
