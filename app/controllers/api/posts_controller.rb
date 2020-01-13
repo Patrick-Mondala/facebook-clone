@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
         friendship.requested.id
       end
     }
-    @posts = Post.where("author_id = #{current_user.id} OR timeline_owner_id = #{current_user.id} #{ friend_ids.length > 0 ? " OR author_id IN ?" : ''}", friend_ids).includes(:likes, :likers)
+    @posts = Post.where("author_id = #{current_user.id} OR timeline_owner_id = #{current_user.id} #{friend_ids.length == 1 ? "OR author_id = #{friend_ids[0]}" : (friend_ids.length > 0 ? " OR author_id IN ?" : '')}", friend_ids).includes(:likes, :likers)
     render :index
   end
 
