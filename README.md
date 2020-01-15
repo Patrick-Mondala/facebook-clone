@@ -201,7 +201,6 @@ handleSignupError(field, callback) {
     }
 ```
 
-
 ## User Search
 
 Using the Search Bar users can find and view other people's profiles by name.
