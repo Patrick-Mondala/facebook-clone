@@ -34,7 +34,7 @@ The newsfeed holds all the latest posts of friends
 
 Using the friendship model we can find all of the friends of the logged in user and search for all the posts that have been authored by the logged in user and their friends.
 
-```
+```ruby
 def newsfeed
     friend_ids = Friendship.where("accepted = true AND (requested_id = ? OR requester_id = ?)", current_user.id, current_user.id)
     .map { |friendship| 
@@ -57,7 +57,7 @@ The sign up form provides tool-tip assistance to bring attention to fields that 
 
 In order to keep track of each individual error as soon as the error is noticeable even before the form is submitted it is important to keep track of the current focused field and the errors of fields in order to display them to the user.
 
-```
+```javascript
 this.state = this.props.formType === 'Log In' ? {
             email: '',
             password: ''
@@ -77,7 +77,7 @@ this.state = this.props.formType === 'Log In' ? {
 
 Because of this system where we don't rely on the submission response, but instead real-time errors after a user exits an input field, it was necessary to trigger all of the fields for evaluation of potential errors on submission.
 
-```
+```javascript
 handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -102,7 +102,7 @@ handleSubmit(e) {
 
 In this code snippet I took advantage of the React.setState function's callback capability so I can synchronously check each field individually and make sure all of them display by the time it finishes.
 
-```
+```javascript
 handleSignupError(field, callback) {
         return e => {
             this.disableFocus();
@@ -209,7 +209,7 @@ Using the Search Bar users can find and view other people's profiles by name.
 
 Using the ransack gem it was easy to filter out users based on the searched first name with this controller method:
 
-```
+```ruby
   def search
     @users = User.ransack(first_name_cont: params[:q]).result(distinct: true).limit(8)
   end
@@ -217,7 +217,7 @@ Using the ransack gem it was easy to filter out users based on the searched firs
 
 For real-time front-end updates to display all users as they meet the search criteria, it was necessary to keep track of the state of the search text and continue to query with each update in order to receive the auto complete results.
 
-```
+```javascript
 getAutoCompleteResults(e) {
     if (e.target.value.length > 0) {
       this.setState(
