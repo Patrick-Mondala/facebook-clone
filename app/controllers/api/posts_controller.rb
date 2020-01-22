@@ -1,7 +1,6 @@
 class Api::PostsController < ApplicationController
   def newsfeed
-    friend_ids = Friendship.where("accepted = true AND (requested_id = ? OR requester_id = ?)", current_user.id, current_user.id)
-    .map { |friendship| 
+    friend_ids = current_user.friends.map { |friendship| 
       if friendship.requested_id == current_user.id
         friendship.requester.id
       else

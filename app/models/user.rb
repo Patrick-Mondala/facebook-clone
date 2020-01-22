@@ -31,15 +31,10 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
   has_many :liked_comments, through: :likes, source: :likeable, source_type: "Comment"
 
-  def newsFeed
-    Friendship.where("accepted = true AND (requested_id = ? OR requester_id = ?)", self.id, self.id)
-    .map {|friendship|
-      if friendship.requested_id == self.id
-        friendship.requester.timeline_posts
-      else
-        friendship.requested.timeline_posts
-      end
-    }.flatten.concat(self.timeline_posts)
+  def friends
+    accepted_sent_requests = self.sent_friend_requests.select { |friendship| friendship.accepted }
+    accepted_received_requests = self.received_friend_requests.select { |friendship| friendship.accepted }
+    accepted_sent_requests.concat(accepted_received_requests)
   end
 
   def self.find_by_credentials(email, password)
