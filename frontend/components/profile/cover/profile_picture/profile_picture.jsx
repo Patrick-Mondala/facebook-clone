@@ -27,7 +27,7 @@ class ProfilePicture extends React.Component {
             >
                 <div className="profile-cover-profile-picture-cropper">
                     <img
-                        src={this.props.user.profile_picture ? this.props.user.profile_picture : "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"} 
+                src={this.props.user.profile_picture ? this.props.user.profile_picture : "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"} 
                         className="profile-cover-profile-picture" 
                     />
                     {this.props.user.id === this.props.currentUser.id && this.state.hover ?

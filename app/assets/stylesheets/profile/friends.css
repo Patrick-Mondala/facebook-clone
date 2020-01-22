@@ -2,14 +2,15 @@
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 3px;
-    width: 297px;
-    padding: 12px;
+    width: 315px;
+    padding: 3px;
     margin-top: 10px;
 }
 
 .profile-sidebar-profile-friends-header {
     display: flex;
     align-items: center;
+    margin: 6px;
 }
 
 .profile-sidebar-profile-friends-icon-container {
@@ -27,4 +28,39 @@
     color: white;
     margin-left: 3px;
     margin-top: 4px;
+}
+
+.profile-sidebar-friends {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+}
+
+.profile-sidebar-friends > a {
+  width: 105px;
+  margin-bottom: 2px;
+}
+
+.profile-sidebar-friends > a > li {
+  padding: 0 2px 2px 2px;
+  text-align: center;
+  flex: 1 0 calc(33.333% - 20px); 
+  max-width: calc(33.333% - 20px);
+  justify-content: center;
+  cursor: pointer;
+  color: #385da0;
+}
+
+.profile-sidebar-friends > a > li:hover {
+  text-decoration: underline;
+}
+
+.profile-sidebar-friends > a > li > img {
+  height: 100px;
+  width: 100px;
+}
+
+.profile-sidebar-friends > a > li > span {
+  width: 100%;
 }

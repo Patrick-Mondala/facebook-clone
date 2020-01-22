@@ -40,7 +40,7 @@ class ProfilePostIndexItem extends React.Component {
                             onClick={() => this.props.history.push(`/users/${this.props.author.id}`)}
                             src={
                             this.props.author.profile_picture || 
-                            "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"}
+                              "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"}
                             className="profile-post-form-input-profile-picture post-index-item-profile-picture"
                         />
                     </div>

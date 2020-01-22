@@ -8,9 +8,9 @@ export default class ProfileSidebar extends React.Component {
     render() {
         return (
             <div className="profile-sidebar">
-                <ProfileIntro user={this.props.user} currentUser={this.props.currentUser}/>
+                <ProfileIntro user={this.props.user} currentUser={this.props.currentUser} />
                 <ProfilePhotos user={this.props.user} currentUser={this.props.currentUser} />
-                <ProfileFriends user={this.props.user} currentUser={this.props.currentUser} />
+                <ProfileFriends user={this.props.user} currentUser={this.props.currentUser} friendships={this.props.friendships}/>
             </div>
         )
     }

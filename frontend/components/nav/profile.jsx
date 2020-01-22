@@ -65,7 +65,7 @@ class ProfileNav extends React.Component {
                         <img className="profile-navbar-profile-picture"
                             src={this.props.currentUser.profile_picture ? 
                                 this.props.currentUser.profile_picture 
-                                : "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"} 
+                              : "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"} 
                         />
                     </div>
                     {this.props.currentUser.first_name}

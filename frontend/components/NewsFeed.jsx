@@ -47,7 +47,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     fetchNewsfeed: () => dispatch(fetchNewsfeed()),
     fetchFriendships: userId => dispatch(fetchFriendships(userId))
-})
+});
 
 export default connect(
     mapStateToProps,
