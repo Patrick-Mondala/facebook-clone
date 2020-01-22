@@ -5,11 +5,11 @@ json.requested_name friendship.requested.first_name + " " + friendship.requested
 if friendship.requester.profile_picture.attached?
     json.requester_picture url_for(friendship.requester.profile_picture)
 else
-    json.requester_picture "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"
+    json.requester_picture "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"
 end
 
 if friendship.requested.profile_picture.attached?
     json.requested_picture url_for(friendship.requested.profile_picture)
 else
-    json.requested_picture "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"
+    json.requested_picture "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"
 end

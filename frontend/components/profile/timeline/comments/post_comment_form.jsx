@@ -33,7 +33,7 @@ class PostCommentForm extends React.Component {
         return (
             <div className="post-comment-form-container">
                 <div className="profile-comment-form-profile-picture-container">
-                    <img src={this.props.currentUser.profile_picture || "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"} />
+              <img src={this.props.currentUser.profile_picture || "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"} />
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <textarea 

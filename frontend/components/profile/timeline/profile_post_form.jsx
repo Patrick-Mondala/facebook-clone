@@ -92,7 +92,7 @@ class ProfilePostForm extends React.Component {
                   <div className="profile-post-form-top-input-container">
                     <div className="profile-post-form-input-profile-picture-container">
                         <img
-                            src={this.props.currentUser.profile_picture || "https://hoursofidleness.files.wordpress.com/2012/06/gray-card.jpg"}
+                    src={this.props.currentUser.profile_picture || "https://www.sackettwaconia.com/wp-content/uploads/default-profile.png"}
                             className="profile-post-form-input-profile-picture"
                         />
                     </div>

@@ -2,14 +2,15 @@
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 3px;
-    width: 297px;
-    padding: 12px;
+    width: 315px;
+    padding: 3px;
     margin-top: 10px;
 }
 
 .profile-sidebar-profile-photos-header {
     display: flex;
     align-items: center;
+    margin: 6px;
 }
 
 .profile-sidebar-profile-photos-icon-container {
@@ -27,4 +28,29 @@
     color: white;
     margin-left: 4px;
     margin-top: 4px;
+}
+
+.profile-sidebar-profile-photos {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+}
+
+.profile-sidebar-profile-photos > li {
+  padding: 0 2px 2px 2px;
+  text-align: center;
+  width: 100px;
+  justify-content: center;
+  color: #385da0;
+}
+
+.profile-sidebar-profile-photos > li > div > img {
+  height: 100%;
+  width: 100%;
+}
+
+.photo-container {
+  height: 100px;
+  width: 100px;
 }
