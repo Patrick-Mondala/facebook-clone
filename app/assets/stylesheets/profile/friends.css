@@ -59,8 +59,13 @@
 .profile-sidebar-friends > a > li > img {
   height: 100px;
   width: 100px;
+  margin-bottom: 8px;
 }
 
 .profile-sidebar-friends > a > li > span {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  font-size: 12px;
+  margin-top: 8px;
 }
