@@ -171,6 +171,7 @@
 .profile-post-index-item-count-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 8px;
 }
 
 .profile-post-index-item-like-count {
